@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace RiverPortApp
 {
-    class ControllerUtils
+    class FormUtils
     {
         public static bool checkFillFields(TextBox a1,
                                        TextBox a2,

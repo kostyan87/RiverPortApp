@@ -19,6 +19,8 @@ namespace RiverPortApp
 
         private int day = 0;
 
+        private Controller controller;
+
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +29,23 @@ namespace RiverPortApp
         private void buttonStart_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            controller = new Controller(Convert.ToInt32(smallShipsCount.Text),
+                                        Convert.ToInt32(mediumShipsCount.Text),
+                                        Convert.ToInt32(largeShipsCount.Text),
+                                        Convert.ToInt32(smallShipsServiceTime.Text),
+                                        Convert.ToInt32(mediumShipsServiceTime.Text),
+                                        Convert.ToInt32(largeShipsServiceTime.Text),
+                                        Convert.ToInt32(shipsTime.Text));
+
+            testLabel.Text = controller.getVesselStorage().getStringVessels();
+
+            // Запрещает добавление в таблицу строк пользователем
+            roadsteadData.AllowUserToAddRows = false;
+            roadsteadData.AllowUserToDeleteRows = false;
+            roadsteadData.ReadOnly = true;
+
+            //roadsteadData.Rows.Add("15326", "2", "25");
+
             smallShipsCount.ReadOnly = true;
             mediumShipsCount.ReadOnly = true;
             largeShipsCount.ReadOnly = true;
@@ -61,6 +80,16 @@ namespace RiverPortApp
 
             if (this.day < 10) dayLabel.Text = "0" + this.day.ToString();
             else dayLabel.Text = this.day.ToString();
+
+            // Добавление в рейд
+            if (this.hour % Convert.ToInt32(shipsTime.Text) == 0)
+            {
+                Vessel currentVessel = controller.getVesselStorage().getVessel();
+
+                if (controller.getVesselStorage().getVessels().Count == 0) timer1.Enabled = false;
+
+                roadsteadData.Rows.Add(currentVessel.getId(), currentVessel.getSize(), currentVessel.getServiceTime());
+            }
         }
 
         // Ускорение секундомера
@@ -87,13 +116,13 @@ namespace RiverPortApp
         // Проверка ввода текста
         private void input_TextChanged(object sender, EventArgs e)
         {
-            buttonStart.Enabled = ControllerUtils.checkFillFields(smallShipsCount,
-                                                              mediumShipsCount,
-                                                              largeShipsCount,
-                                                              smallShipsServiceTime,
-                                                              mediumShipsServiceTime,
-                                                              largeShipsServiceTime,
-                                                              shipsTime);
+            buttonStart.Enabled = FormUtils.checkFillFields(smallShipsCount,
+                                                            mediumShipsCount,
+                                                            largeShipsCount,
+                                                            smallShipsServiceTime,
+                                                            mediumShipsServiceTime,
+                                                            largeShipsServiceTime,
+                                                            shipsTime);
         }
 
         // Проверка, что вводятся только цифры
@@ -105,6 +134,40 @@ namespace RiverPortApp
             {
                 e.Handled = true;
             }
+        }
+
+        // Геттеры для входных данных
+        public string getSmallShipsCount()
+        {
+            return smallShipsCount.Text;
+        }
+
+        public string getMediumShipsCount()
+        {
+            return mediumShipsCount.Text;
+        }
+
+        public string getLargeShipsCount()
+        {
+            return largeShipsCount.Text;
+        }
+
+        public string getSmallShipsServiceTime()
+        {
+            return smallShipsServiceTime.Text;
+        }
+
+        public string getMedShipsServiceTime()
+        {
+            return mediumShipsServiceTime.Text;
+        }
+        public string getLargeShipsServiceTime()
+        {
+            return largeShipsServiceTime.Text;
+        }
+        public string getShipsTime()
+        {
+            return shipsTime.Text;
         }
     }
 }

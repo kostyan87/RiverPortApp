@@ -107,6 +107,8 @@ namespace RiverPortApp
             this.serviceNowLabel = new System.Windows.Forms.Label();
             this.firstPierLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.testLabel = new System.Windows.Forms.Label();
             this.dayLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label25 = new System.Windows.Forms.Label();
@@ -121,16 +123,23 @@ namespace RiverPortApp
             this.buttonX5 = new System.Windows.Forms.Button();
             this.buttonX2 = new System.Windows.Forms.Button();
             this.buttonX1 = new System.Windows.Forms.Button();
+            this.roadsteadData = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.service_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.smallShipsPanel.SuspendLayout();
             this.largeShipsPanel.SuspendLayout();
             this.mediumShipsPanel.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.firstPier.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roadsteadData)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -139,6 +148,7 @@ namespace RiverPortApp
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
@@ -375,6 +385,7 @@ namespace RiverPortApp
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.roadsteadData);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
@@ -871,6 +882,24 @@ namespace RiverPortApp
             this.tabPage2.Text = "Статистика";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.testLabel);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(772, 405);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Test";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(101, 68);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(0, 20);
+            this.testLabel.TabIndex = 0;
+            // 
             // dayLabel
             // 
             this.dayLabel.AutoSize = true;
@@ -966,7 +995,7 @@ namespace RiverPortApp
             // buttonX10
             // 
             this.buttonX10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX10.Location = new System.Drawing.Point(815, 302);
+            this.buttonX10.Location = new System.Drawing.Point(815, 339);
             this.buttonX10.Name = "buttonX10";
             this.buttonX10.Size = new System.Drawing.Size(89, 38);
             this.buttonX10.TabIndex = 16;
@@ -977,7 +1006,7 @@ namespace RiverPortApp
             // buttonX5
             // 
             this.buttonX5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX5.Location = new System.Drawing.Point(815, 258);
+            this.buttonX5.Location = new System.Drawing.Point(815, 285);
             this.buttonX5.Name = "buttonX5";
             this.buttonX5.Size = new System.Drawing.Size(89, 38);
             this.buttonX5.TabIndex = 17;
@@ -988,7 +1017,7 @@ namespace RiverPortApp
             // buttonX2
             // 
             this.buttonX2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX2.Location = new System.Drawing.Point(815, 214);
+            this.buttonX2.Location = new System.Drawing.Point(815, 229);
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(89, 38);
             this.buttonX2.TabIndex = 18;
@@ -1006,6 +1035,41 @@ namespace RiverPortApp
             this.buttonX1.Text = "x1";
             this.buttonX1.UseVisualStyleBackColor = true;
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            // 
+            // roadsteadData
+            // 
+            this.roadsteadData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.roadsteadData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.size,
+            this.service_time});
+            this.roadsteadData.Location = new System.Drawing.Point(31, 23);
+            this.roadsteadData.Name = "roadsteadData";
+            this.roadsteadData.RowHeadersWidth = 51;
+            this.roadsteadData.RowTemplate.Height = 29;
+            this.roadsteadData.Size = new System.Drawing.Size(608, 188);
+            this.roadsteadData.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 125;
+            // 
+            // size
+            // 
+            this.size.HeaderText = "size";
+            this.size.MinimumWidth = 6;
+            this.size.Name = "size";
+            this.size.Width = 125;
+            // 
+            // service_time
+            // 
+            this.service_time.HeaderText = "service time";
+            this.service_time.MinimumWidth = 6;
+            this.service_time.Name = "service_time";
+            this.service_time.Width = 125;
             // 
             // Form1
             // 
@@ -1038,6 +1102,7 @@ namespace RiverPortApp
             this.largeShipsPanel.PerformLayout();
             this.mediumShipsPanel.ResumeLayout(false);
             this.mediumShipsPanel.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1048,6 +1113,9 @@ namespace RiverPortApp
             this.panel1.PerformLayout();
             this.firstPier.ResumeLayout(false);
             this.firstPier.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roadsteadData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1146,6 +1214,12 @@ namespace RiverPortApp
         private System.Windows.Forms.Button buttonX5;
         private System.Windows.Forms.Button buttonX2;
         private System.Windows.Forms.Button buttonX1;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label testLabel;
+        private System.Windows.Forms.DataGridView roadsteadData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn service_time;
     }
 }
 
