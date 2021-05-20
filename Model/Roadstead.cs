@@ -14,5 +14,20 @@ namespace RiverPortApp
         {
             throw new NotImplementedException();
         }
+
+        public void pushVessel(Vessel vessel)
+        {
+            queue.Enqueue(vessel);
+        }
+
+        public void popVessel(Vessel vessel)
+        {
+            queue.Dequeue();
+        }
+
+        public Vessel getPeekVessel()
+        {
+            return queue.Peek();
+        }
     }
 }

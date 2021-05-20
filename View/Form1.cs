@@ -8,36 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
+using RiverPortApp.Presenter;
 
-namespace RiverPortApp
+namespace RiverPortApp.View
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IMainView
     {
-        private int min = 0;
-
-        private int hour = 0;
-
-        private int day = 0;
-
-        private Controller controller;
+        private MainPresenter presenter;
 
         public Form1()
         {
             InitializeComponent();
+            presenter = new MainPresenter(this);
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-            controller = new Controller(Convert.ToInt32(smallShipsCount.Text),
-                                        Convert.ToInt32(mediumShipsCount.Text),
-                                        Convert.ToInt32(largeShipsCount.Text),
-                                        Convert.ToInt32(smallShipsServiceTime.Text),
-                                        Convert.ToInt32(mediumShipsServiceTime.Text),
-                                        Convert.ToInt32(largeShipsServiceTime.Text),
-                                        Convert.ToInt32(shipsTime.Text));
 
-            testLabel.Text = controller.getVesselStorage().getStringVessels();
+            presenter.initFacade(Convert.ToInt32(smallShipsCount.Text),
+                                 Convert.ToInt32(mediumShipsCount.Text),
+                                 Convert.ToInt32(largeShipsCount.Text),
+                                 Convert.ToInt32(smallShipsServiceTime.Text),
+                                 Convert.ToInt32(mediumShipsServiceTime.Text),
+                                 Convert.ToInt32(largeShipsServiceTime.Text),
+                                 Convert.ToInt32(shipsTime.Text));
+            presenter.loadVesselStorage();
 
             // Запрещает добавление в таблицу строк пользователем
             roadsteadData.AllowUserToAddRows = false;
@@ -46,6 +42,7 @@ namespace RiverPortApp
 
             //roadsteadData.Rows.Add("15326", "2", "25");
 
+            // Блокирует поля для ввода исходных данных
             smallShipsCount.ReadOnly = true;
             mediumShipsCount.ReadOnly = true;
             largeShipsCount.ReadOnly = true;
@@ -55,40 +52,42 @@ namespace RiverPortApp
             shipsTime.ReadOnly = true;
         }
 
+        public void showVesselStorage(string vesselStorage)
+        {
+            testLabel.Text = vesselStorage;
+        }
+
+        public void showTime(int min, int hour, int day)
+        {
+            if (min < 10) minLabel.Text = "0" + min.ToString();
+            else minLabel.Text = min.ToString();
+
+            if (hour < 10) hourLabel.Text = "0" + hour.ToString();
+            else hourLabel.Text = hour.ToString();
+
+            if (day < 10) dayLabel.Text = "0" + day.ToString();
+            else dayLabel.Text = day.ToString();
+        }
+
         // Реализация секундомера
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            this.min++;
+            presenter.changeTime();
 
-            if (this.min == 60)
-            {
-                this.min = 0;
-                this.hour++;
-            }
+            presenter.loadTime();
 
-            if (this.hour == 24)
-            {
-                this.hour = 0;
-                this.day++;
-            }
-
-            if (this.min < 10) minLabel.Text = "0" + this.min.ToString();
-            else minLabel.Text = this.min.ToString();
-
-            if (this.hour < 10) hourLabel.Text = "0" + this.hour.ToString();
-            else hourLabel.Text = this.hour.ToString();
-
-            if (this.day < 10) dayLabel.Text = "0" + this.day.ToString();
-            else dayLabel.Text = this.day.ToString();
+            //controller.setMin(this.min);
+            //controller.setHour(this.hour);
+            //controller.setDay(this.day);
 
             // Добавление в рейд
-            if (this.hour % Convert.ToInt32(shipsTime.Text) == 0)
+            //if (this.hour % Convert.ToInt32(shipsTime.Text) == 0)
             {
-                Vessel currentVessel = controller.getVesselStorage().getVessel();
+                //Vessel currentVessel = controller.getVesselStorage().getVessel();
 
-                if (controller.getVesselStorage().getVessels().Count == 0) timer1.Enabled = false;
+                //controller.getRoadstead().pushVessel(currentVessel);
 
-                roadsteadData.Rows.Add(currentVessel.getId(), currentVessel.getSize(), currentVessel.getServiceTime());
+                //roadsteadData.Rows.Add(currentVessel.getId(), currentVessel.getSize(), currentVessel.getServiceTime());
             }
         }
 
@@ -137,7 +136,7 @@ namespace RiverPortApp
         }
 
         // Геттеры для входных данных
-        public string getSmallShipsCount()
+        /*public string getSmallShipsCount()
         {
             return smallShipsCount.Text;
         }
@@ -168,6 +167,6 @@ namespace RiverPortApp
         public string getShipsTime()
         {
             return shipsTime.Text;
-        }
+        }*/
     }
 }

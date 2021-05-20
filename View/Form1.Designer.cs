@@ -1,5 +1,5 @@
 ﻿
-namespace RiverPortApp
+namespace RiverPortApp.View
 {
     partial class Form1
     {

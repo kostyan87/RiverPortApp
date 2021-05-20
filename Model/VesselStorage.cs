@@ -18,11 +18,11 @@ namespace RiverPortApp
                              int largeShipsServiceTime)
         {
             this.vessels = VesselStorageUtils.setVessels(smallShipsCount,
-                                                   mediumShipsCount,
-                                                   largeShipsCount,
-                                                   smallShipsServiceTime,
-                                                   mediumShipsServiceTime,
-                                                   largeShipsServiceTime);
+                                                         mediumShipsCount,
+                                                         largeShipsCount,
+                                                         smallShipsServiceTime,
+                                                         mediumShipsServiceTime,
+                                                         largeShipsServiceTime);
         }
 
         public Vessel getVessel()

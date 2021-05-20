@@ -46,7 +46,7 @@ namespace RiverPortApp
 
             for (int i = 0; i < 5; i++)
             {
-                id = id + randDigit.Next(10);
+                id = id + randDigit.Next(1, 10);
             }
 
             if (idList.Contains(id))

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RiverPortApp
+namespace RiverPortApp.Model
 {
-    class Controller
+    class ProcessingComponents
     {
         private VesselStorage vesselStorage;
 
@@ -14,13 +14,9 @@ namespace RiverPortApp
 
         private Port port;
 
-        public Controller(int smallShipsCount,
-                          int mediumShipsCount,
-                          int largeShipsCount,
-                          int smallShipsServiceTime,
-                          int mediumShipsServiceTime,
-                          int largeShipsServiceTime,
-                          int shipsTime)
+        public ProcessingComponents(int smallShipsCount, int mediumShipsCount,
+                                    int largeShipsCount, int smallShipsServiceTime,
+                                    int mediumShipsServiceTime, int largeShipsServiceTime)
         {
             this.vesselStorage = new VesselStorage(smallShipsCount,
                                                    mediumShipsCount,
@@ -28,11 +24,23 @@ namespace RiverPortApp
                                                    smallShipsServiceTime,
                                                    mediumShipsServiceTime,
                                                    largeShipsServiceTime);
+            this.port = new Port();
+            this.roadstead = new Roadstead();
         }
 
         public VesselStorage getVesselStorage()
         {
-            return vesselStorage;
+            return this.vesselStorage;
+        }
+
+        public Port getPort()
+        {
+            return this.port;
+        }
+
+        public Roadstead getRoadstead()
+        {
+            return this.roadstead;
         }
     }
 }
