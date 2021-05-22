@@ -14,6 +14,8 @@ namespace RiverPortApp.Model
 
         private int min = 0;
 
+        private int generalHour = 0;
+
         private int shipsTime;
 
         public TimeManager(int shipsTime)
@@ -29,6 +31,7 @@ namespace RiverPortApp.Model
             {
                 this.min = 0;
                 this.hour++;
+                this.generalHour++;
             }
 
             if (this.hour == 24)
@@ -57,6 +60,16 @@ namespace RiverPortApp.Model
         public int getDay()
         {
             return this.day;
+        }
+
+        public int getShipsTime()
+        {
+            return this.shipsTime;
+        }
+
+        public int getGeneralHour()
+        {
+            return this.generalHour;
         }
     }
 }

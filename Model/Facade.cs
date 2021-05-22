@@ -32,5 +32,15 @@ namespace RiverPortApp.Model
         {
             return timeManager;
         }
+
+        public Vessel getShipOutOfStorage()
+        {
+            if (this.timeManager.getGeneralHour() % this.timeManager.getShipsTime() == 0 
+                && this.timeManager.getMin() == 0)
+            {
+                return this.processingComponents.getVesselStorage().getVessel();
+            }
+            return null;
+        }
     }
 }

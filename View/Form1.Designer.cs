@@ -53,7 +53,30 @@ namespace RiverPortApp.View
             this.mediumShipsCount = new System.Windows.Forms.TextBox();
             this.mediumShipsCountLabel = new System.Windows.Forms.Label();
             this.mediumShipsLabel = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.vfdfvd = new System.Windows.Forms.Label();
+            this.storageBigShips = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label32 = new System.Windows.Forms.Label();
+            this.storageMedShips = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label31 = new System.Windows.Forms.Label();
+            this.storageSmallShips = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ships_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.roadsteadData = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.service_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -123,28 +146,31 @@ namespace RiverPortApp.View
             this.buttonX5 = new System.Windows.Forms.Button();
             this.buttonX2 = new System.Windows.Forms.Button();
             this.buttonX1 = new System.Windows.Forms.Button();
-            this.roadsteadData = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.service_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timerButton = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.smallShipsPanel.SuspendLayout();
             this.largeShipsPanel.SuspendLayout();
             this.mediumShipsPanel.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.storageBigShips)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storageMedShips)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storageSmallShips)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roadsteadData)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.firstPier.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roadsteadData)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -154,7 +180,7 @@ namespace RiverPortApp.View
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(780, 438);
+            this.tabControl1.Size = new System.Drawing.Size(1046, 602);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -169,7 +195,7 @@ namespace RiverPortApp.View
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(772, 405);
+            this.tabPage1.Size = new System.Drawing.Size(1038, 569);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Входные данные";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -177,7 +203,7 @@ namespace RiverPortApp.View
             // buttonStart
             // 
             this.buttonStart.Enabled = false;
-            this.buttonStart.Location = new System.Drawing.Point(256, 341);
+            this.buttonStart.Location = new System.Drawing.Point(387, 415);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(267, 41);
             this.buttonStart.TabIndex = 6;
@@ -187,7 +213,7 @@ namespace RiverPortApp.View
             // 
             // shipsTime
             // 
-            this.shipsTime.Location = new System.Drawing.Point(426, 290);
+            this.shipsTime.Location = new System.Drawing.Point(557, 364);
             this.shipsTime.Name = "shipsTime";
             this.shipsTime.Size = new System.Drawing.Size(125, 27);
             this.shipsTime.TabIndex = 5;
@@ -197,7 +223,7 @@ namespace RiverPortApp.View
             // shipsTimeLabel
             // 
             this.shipsTimeLabel.AutoSize = true;
-            this.shipsTimeLabel.Location = new System.Drawing.Point(141, 290);
+            this.shipsTimeLabel.Location = new System.Drawing.Point(272, 364);
             this.shipsTimeLabel.Name = "shipsTimeLabel";
             this.shipsTimeLabel.Size = new System.Drawing.Size(265, 20);
             this.shipsTimeLabel.TabIndex = 4;
@@ -211,15 +237,15 @@ namespace RiverPortApp.View
             this.smallShipsPanel.Controls.Add(this.smallShipsCount);
             this.smallShipsPanel.Controls.Add(this.smallShipsCountLabel);
             this.smallShipsPanel.Controls.Add(this.smallShipsLabel);
-            this.smallShipsPanel.Location = new System.Drawing.Point(7, 33);
+            this.smallShipsPanel.Location = new System.Drawing.Point(29, 107);
             this.smallShipsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.smallShipsPanel.Name = "smallShipsPanel";
-            this.smallShipsPanel.Size = new System.Drawing.Size(240, 222);
+            this.smallShipsPanel.Size = new System.Drawing.Size(298, 222);
             this.smallShipsPanel.TabIndex = 3;
             // 
             // smallShipsServiceTime
             // 
-            this.smallShipsServiceTime.Location = new System.Drawing.Point(134, 148);
+            this.smallShipsServiceTime.Location = new System.Drawing.Point(191, 145);
             this.smallShipsServiceTime.Name = "smallShipsServiceTime";
             this.smallShipsServiceTime.Size = new System.Drawing.Size(80, 27);
             this.smallShipsServiceTime.TabIndex = 5;
@@ -231,13 +257,13 @@ namespace RiverPortApp.View
             this.smalShipsServiceTimeLabel.AutoSize = true;
             this.smalShipsServiceTimeLabel.Location = new System.Drawing.Point(21, 148);
             this.smalShipsServiceTimeLabel.Name = "smalShipsServiceTimeLabel";
-            this.smalShipsServiceTimeLabel.Size = new System.Drawing.Size(111, 40);
+            this.smalShipsServiceTimeLabel.Size = new System.Drawing.Size(160, 20);
             this.smalShipsServiceTimeLabel.TabIndex = 4;
-            this.smalShipsServiceTimeLabel.Text = "Время\r\nобслуживания";
+            this.smalShipsServiceTimeLabel.Text = "Время обслуживания";
             // 
             // smallShipsCount
             // 
-            this.smallShipsCount.Location = new System.Drawing.Point(134, 85);
+            this.smallShipsCount.Location = new System.Drawing.Point(191, 85);
             this.smallShipsCount.Name = "smallShipsCount";
             this.smallShipsCount.Size = new System.Drawing.Size(80, 27);
             this.smallShipsCount.TabIndex = 3;
@@ -247,7 +273,7 @@ namespace RiverPortApp.View
             // smallShipsCountLabel
             // 
             this.smallShipsCountLabel.AutoSize = true;
-            this.smallShipsCountLabel.Location = new System.Drawing.Point(21, 88);
+            this.smallShipsCountLabel.Location = new System.Drawing.Point(57, 88);
             this.smallShipsCountLabel.Name = "smallShipsCountLabel";
             this.smallShipsCountLabel.Size = new System.Drawing.Size(90, 20);
             this.smallShipsCountLabel.TabIndex = 2;
@@ -256,7 +282,7 @@ namespace RiverPortApp.View
             // smallShipsLabel
             // 
             this.smallShipsLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.smallShipsLabel.Location = new System.Drawing.Point(21, 15);
+            this.smallShipsLabel.Location = new System.Drawing.Point(46, 15);
             this.smallShipsLabel.Name = "smallShipsLabel";
             this.smallShipsLabel.Size = new System.Drawing.Size(193, 35);
             this.smallShipsLabel.TabIndex = 1;
@@ -271,15 +297,15 @@ namespace RiverPortApp.View
             this.largeShipsPanel.Controls.Add(this.largeShipsCount);
             this.largeShipsPanel.Controls.Add(this.largeShipsCountLabel);
             this.largeShipsPanel.Controls.Add(this.largeShipsLabel);
-            this.largeShipsPanel.Location = new System.Drawing.Point(523, 33);
+            this.largeShipsPanel.Location = new System.Drawing.Point(715, 107);
             this.largeShipsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.largeShipsPanel.Name = "largeShipsPanel";
-            this.largeShipsPanel.Size = new System.Drawing.Size(240, 222);
+            this.largeShipsPanel.Size = new System.Drawing.Size(298, 222);
             this.largeShipsPanel.TabIndex = 2;
             // 
             // largeShipsServiceTime
             // 
-            this.largeShipsServiceTime.Location = new System.Drawing.Point(134, 148);
+            this.largeShipsServiceTime.Location = new System.Drawing.Point(191, 141);
             this.largeShipsServiceTime.Name = "largeShipsServiceTime";
             this.largeShipsServiceTime.Size = new System.Drawing.Size(80, 27);
             this.largeShipsServiceTime.TabIndex = 5;
@@ -291,13 +317,13 @@ namespace RiverPortApp.View
             this.largeShipsServiceTimeLable.AutoSize = true;
             this.largeShipsServiceTimeLable.Location = new System.Drawing.Point(21, 148);
             this.largeShipsServiceTimeLable.Name = "largeShipsServiceTimeLable";
-            this.largeShipsServiceTimeLable.Size = new System.Drawing.Size(111, 40);
+            this.largeShipsServiceTimeLable.Size = new System.Drawing.Size(160, 20);
             this.largeShipsServiceTimeLable.TabIndex = 4;
-            this.largeShipsServiceTimeLable.Text = "Время\r\nобслуживания";
+            this.largeShipsServiceTimeLable.Text = "Время обслуживания";
             // 
             // largeShipsCount
             // 
-            this.largeShipsCount.Location = new System.Drawing.Point(134, 85);
+            this.largeShipsCount.Location = new System.Drawing.Point(191, 85);
             this.largeShipsCount.Name = "largeShipsCount";
             this.largeShipsCount.Size = new System.Drawing.Size(80, 27);
             this.largeShipsCount.TabIndex = 3;
@@ -307,7 +333,7 @@ namespace RiverPortApp.View
             // largeShipsCountLabel
             // 
             this.largeShipsCountLabel.AutoSize = true;
-            this.largeShipsCountLabel.Location = new System.Drawing.Point(21, 88);
+            this.largeShipsCountLabel.Location = new System.Drawing.Point(68, 88);
             this.largeShipsCountLabel.Name = "largeShipsCountLabel";
             this.largeShipsCountLabel.Size = new System.Drawing.Size(90, 20);
             this.largeShipsCountLabel.TabIndex = 2;
@@ -316,7 +342,7 @@ namespace RiverPortApp.View
             // largeShipsLabel
             // 
             this.largeShipsLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.largeShipsLabel.Location = new System.Drawing.Point(21, 15);
+            this.largeShipsLabel.Location = new System.Drawing.Point(53, 15);
             this.largeShipsLabel.Name = "largeShipsLabel";
             this.largeShipsLabel.Size = new System.Drawing.Size(193, 35);
             this.largeShipsLabel.TabIndex = 1;
@@ -331,15 +357,15 @@ namespace RiverPortApp.View
             this.mediumShipsPanel.Controls.Add(this.mediumShipsCount);
             this.mediumShipsPanel.Controls.Add(this.mediumShipsCountLabel);
             this.mediumShipsPanel.Controls.Add(this.mediumShipsLabel);
-            this.mediumShipsPanel.Location = new System.Drawing.Point(266, 33);
+            this.mediumShipsPanel.Location = new System.Drawing.Point(371, 107);
             this.mediumShipsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mediumShipsPanel.Name = "mediumShipsPanel";
-            this.mediumShipsPanel.Size = new System.Drawing.Size(240, 222);
+            this.mediumShipsPanel.Size = new System.Drawing.Size(298, 222);
             this.mediumShipsPanel.TabIndex = 1;
             // 
             // mediumShipsServiceTime
             // 
-            this.mediumShipsServiceTime.Location = new System.Drawing.Point(134, 148);
+            this.mediumShipsServiceTime.Location = new System.Drawing.Point(192, 145);
             this.mediumShipsServiceTime.Name = "mediumShipsServiceTime";
             this.mediumShipsServiceTime.Size = new System.Drawing.Size(80, 27);
             this.mediumShipsServiceTime.TabIndex = 5;
@@ -351,13 +377,13 @@ namespace RiverPortApp.View
             this.mediumShipsServiceTimeLabel.AutoSize = true;
             this.mediumShipsServiceTimeLabel.Location = new System.Drawing.Point(21, 148);
             this.mediumShipsServiceTimeLabel.Name = "mediumShipsServiceTimeLabel";
-            this.mediumShipsServiceTimeLabel.Size = new System.Drawing.Size(111, 40);
+            this.mediumShipsServiceTimeLabel.Size = new System.Drawing.Size(160, 20);
             this.mediumShipsServiceTimeLabel.TabIndex = 4;
-            this.mediumShipsServiceTimeLabel.Text = "Время\r\nобслуживания";
+            this.mediumShipsServiceTimeLabel.Text = "Время обслуживания";
             // 
             // mediumShipsCount
             // 
-            this.mediumShipsCount.Location = new System.Drawing.Point(134, 85);
+            this.mediumShipsCount.Location = new System.Drawing.Point(192, 85);
             this.mediumShipsCount.Name = "mediumShipsCount";
             this.mediumShipsCount.Size = new System.Drawing.Size(80, 27);
             this.mediumShipsCount.TabIndex = 3;
@@ -367,7 +393,7 @@ namespace RiverPortApp.View
             // mediumShipsCountLabel
             // 
             this.mediumShipsCountLabel.AutoSize = true;
-            this.mediumShipsCountLabel.Location = new System.Drawing.Point(21, 88);
+            this.mediumShipsCountLabel.Location = new System.Drawing.Point(62, 88);
             this.mediumShipsCountLabel.Name = "mediumShipsCountLabel";
             this.mediumShipsCountLabel.Size = new System.Drawing.Size(90, 20);
             this.mediumShipsCountLabel.TabIndex = 2;
@@ -376,12 +402,207 @@ namespace RiverPortApp.View
             // mediumShipsLabel
             // 
             this.mediumShipsLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mediumShipsLabel.Location = new System.Drawing.Point(21, 15);
+            this.mediumShipsLabel.Location = new System.Drawing.Point(50, 15);
             this.mediumShipsLabel.Name = "mediumShipsLabel";
             this.mediumShipsLabel.Size = new System.Drawing.Size(193, 35);
             this.mediumShipsLabel.TabIndex = 1;
             this.mediumShipsLabel.Text = "Средние суда";
             this.mediumShipsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.vfdfvd);
+            this.tabPage6.Controls.Add(this.storageBigShips);
+            this.tabPage6.Controls.Add(this.label32);
+            this.tabPage6.Controls.Add(this.storageMedShips);
+            this.tabPage6.Controls.Add(this.label31);
+            this.tabPage6.Controls.Add(this.storageSmallShips);
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(1038, 569);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Обслуживаемые судна";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // vfdfvd
+            // 
+            this.vfdfvd.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.vfdfvd.Location = new System.Drawing.Point(760, 19);
+            this.vfdfvd.Name = "vfdfvd";
+            this.vfdfvd.Size = new System.Drawing.Size(193, 35);
+            this.vfdfvd.TabIndex = 6;
+            this.vfdfvd.Text = "Большие суда";
+            this.vfdfvd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // storageBigShips
+            // 
+            this.storageBigShips.AllowUserToAddRows = false;
+            this.storageBigShips.AllowUserToDeleteRows = false;
+            this.storageBigShips.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.storageBigShips.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.storageBigShips.Location = new System.Drawing.Point(699, 68);
+            this.storageBigShips.Name = "storageBigShips";
+            this.storageBigShips.ReadOnly = true;
+            this.storageBigShips.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.storageBigShips.RowTemplate.Height = 29;
+            this.storageBigShips.Size = new System.Drawing.Size(324, 474);
+            this.storageBigShips.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "id";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "size";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "service time";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "ships time";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 80;
+            // 
+            // label32
+            // 
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label32.Location = new System.Drawing.Point(417, 19);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(193, 35);
+            this.label32.TabIndex = 4;
+            this.label32.Text = "Средние суда";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // storageMedShips
+            // 
+            this.storageMedShips.AllowUserToAddRows = false;
+            this.storageMedShips.AllowUserToDeleteRows = false;
+            this.storageMedShips.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.storageMedShips.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.storageMedShips.Location = new System.Drawing.Point(359, 68);
+            this.storageMedShips.Name = "storageMedShips";
+            this.storageMedShips.ReadOnly = true;
+            this.storageMedShips.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.storageMedShips.RowTemplate.Height = 29;
+            this.storageMedShips.Size = new System.Drawing.Size(324, 474);
+            this.storageMedShips.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "id";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "size";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "service time";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "ships time";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 80;
+            // 
+            // label31
+            // 
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label31.Location = new System.Drawing.Point(69, 19);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(193, 35);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "Небольшие суда";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // storageSmallShips
+            // 
+            this.storageSmallShips.AllowUserToAddRows = false;
+            this.storageSmallShips.AllowUserToDeleteRows = false;
+            this.storageSmallShips.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.storageSmallShips.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.ships_time});
+            this.storageSmallShips.Location = new System.Drawing.Point(17, 68);
+            this.storageSmallShips.Name = "storageSmallShips";
+            this.storageSmallShips.ReadOnly = true;
+            this.storageSmallShips.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.storageSmallShips.RowTemplate.Height = 29;
+            this.storageSmallShips.Size = new System.Drawing.Size(324, 474);
+            this.storageSmallShips.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "size";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "service time";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 80;
+            // 
+            // ships_time
+            // 
+            this.ships_time.HeaderText = "ships time";
+            this.ships_time.MinimumWidth = 6;
+            this.ships_time.Name = "ships_time";
+            this.ships_time.ReadOnly = true;
+            this.ships_time.Width = 80;
             // 
             // tabPage3
             // 
@@ -389,10 +610,51 @@ namespace RiverPortApp.View
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(772, 405);
+            this.tabPage3.Size = new System.Drawing.Size(1038, 569);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Рейд";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // roadsteadData
+            // 
+            this.roadsteadData.AllowUserToAddRows = false;
+            this.roadsteadData.AllowUserToDeleteRows = false;
+            this.roadsteadData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.roadsteadData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.size,
+            this.service_time});
+            this.roadsteadData.Location = new System.Drawing.Point(31, 23);
+            this.roadsteadData.Name = "roadsteadData";
+            this.roadsteadData.ReadOnly = true;
+            this.roadsteadData.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.roadsteadData.RowTemplate.Height = 29;
+            this.roadsteadData.Size = new System.Drawing.Size(429, 354);
+            this.roadsteadData.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 125;
+            // 
+            // size
+            // 
+            this.size.HeaderText = "size";
+            this.size.MinimumWidth = 6;
+            this.size.Name = "size";
+            this.size.ReadOnly = true;
+            this.size.Width = 125;
+            // 
+            // service_time
+            // 
+            this.service_time.HeaderText = "service time";
+            this.service_time.MinimumWidth = 6;
+            this.service_time.Name = "service_time";
+            this.service_time.ReadOnly = true;
+            this.service_time.Width = 125;
             // 
             // tabPage4
             // 
@@ -406,7 +668,7 @@ namespace RiverPortApp.View
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(772, 405);
+            this.tabPage4.Size = new System.Drawing.Size(1038, 569);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Причалы";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -877,17 +1139,18 @@ namespace RiverPortApp.View
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(772, 405);
+            this.tabPage2.Size = new System.Drawing.Size(1038, 569);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Статистика";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label33);
             this.tabPage5.Controls.Add(this.testLabel);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(772, 405);
+            this.tabPage5.Size = new System.Drawing.Size(1038, 569);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Test";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -904,7 +1167,7 @@ namespace RiverPortApp.View
             // 
             this.dayLabel.AutoSize = true;
             this.dayLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dayLabel.Location = new System.Drawing.Point(786, 127);
+            this.dayLabel.Location = new System.Drawing.Point(1076, 200);
             this.dayLabel.Name = "dayLabel";
             this.dayLabel.Size = new System.Drawing.Size(34, 28);
             this.dayLabel.TabIndex = 7;
@@ -918,7 +1181,7 @@ namespace RiverPortApp.View
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(827, 52);
+            this.label25.Location = new System.Drawing.Point(1117, 125);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(64, 25);
             this.label25.TabIndex = 8;
@@ -928,7 +1191,7 @@ namespace RiverPortApp.View
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(815, 127);
+            this.label26.Location = new System.Drawing.Point(1105, 200);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(16, 28);
             this.label26.TabIndex = 9;
@@ -938,7 +1201,7 @@ namespace RiverPortApp.View
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label27.Location = new System.Drawing.Point(866, 127);
+            this.label27.Location = new System.Drawing.Point(1156, 200);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(16, 28);
             this.label27.TabIndex = 10;
@@ -948,7 +1211,7 @@ namespace RiverPortApp.View
             // 
             this.minLabel.AutoSize = true;
             this.minLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.minLabel.Location = new System.Drawing.Point(888, 127);
+            this.minLabel.Location = new System.Drawing.Point(1178, 200);
             this.minLabel.Name = "minLabel";
             this.minLabel.Size = new System.Drawing.Size(34, 28);
             this.minLabel.TabIndex = 11;
@@ -958,7 +1221,7 @@ namespace RiverPortApp.View
             // 
             this.hourLabel.AutoSize = true;
             this.hourLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.hourLabel.Location = new System.Drawing.Point(837, 127);
+            this.hourLabel.Location = new System.Drawing.Point(1127, 200);
             this.hourLabel.Name = "hourLabel";
             this.hourLabel.Size = new System.Drawing.Size(34, 28);
             this.hourLabel.TabIndex = 12;
@@ -967,7 +1230,7 @@ namespace RiverPortApp.View
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(786, 107);
+            this.label28.Location = new System.Drawing.Point(1076, 180);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(37, 20);
             this.label28.TabIndex = 13;
@@ -976,7 +1239,7 @@ namespace RiverPortApp.View
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(827, 107);
+            this.label29.Location = new System.Drawing.Point(1117, 180);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(45, 20);
             this.label29.TabIndex = 14;
@@ -986,7 +1249,7 @@ namespace RiverPortApp.View
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(878, 107);
+            this.label30.Location = new System.Drawing.Point(1168, 180);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(64, 20);
             this.label30.TabIndex = 15;
@@ -995,7 +1258,7 @@ namespace RiverPortApp.View
             // buttonX10
             // 
             this.buttonX10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX10.Location = new System.Drawing.Point(815, 339);
+            this.buttonX10.Location = new System.Drawing.Point(1105, 375);
             this.buttonX10.Name = "buttonX10";
             this.buttonX10.Size = new System.Drawing.Size(89, 38);
             this.buttonX10.TabIndex = 16;
@@ -1006,7 +1269,7 @@ namespace RiverPortApp.View
             // buttonX5
             // 
             this.buttonX5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX5.Location = new System.Drawing.Point(815, 285);
+            this.buttonX5.Location = new System.Drawing.Point(1105, 331);
             this.buttonX5.Name = "buttonX5";
             this.buttonX5.Size = new System.Drawing.Size(89, 38);
             this.buttonX5.TabIndex = 17;
@@ -1017,7 +1280,7 @@ namespace RiverPortApp.View
             // buttonX2
             // 
             this.buttonX2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX2.Location = new System.Drawing.Point(815, 229);
+            this.buttonX2.Location = new System.Drawing.Point(1105, 287);
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(89, 38);
             this.buttonX2.TabIndex = 18;
@@ -1028,7 +1291,7 @@ namespace RiverPortApp.View
             // buttonX1
             // 
             this.buttonX1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX1.Location = new System.Drawing.Point(815, 170);
+            this.buttonX1.Location = new System.Drawing.Point(1105, 243);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(89, 38);
             this.buttonX1.TabIndex = 19;
@@ -1036,46 +1299,33 @@ namespace RiverPortApp.View
             this.buttonX1.UseVisualStyleBackColor = true;
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
-            // roadsteadData
+            // timerButton
             // 
-            this.roadsteadData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.roadsteadData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.size,
-            this.service_time});
-            this.roadsteadData.Location = new System.Drawing.Point(31, 23);
-            this.roadsteadData.Name = "roadsteadData";
-            this.roadsteadData.RowHeadersWidth = 51;
-            this.roadsteadData.RowTemplate.Height = 29;
-            this.roadsteadData.Size = new System.Drawing.Size(608, 188);
-            this.roadsteadData.TabIndex = 0;
+            this.timerButton.Enabled = false;
+            this.timerButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timerButton.Location = new System.Drawing.Point(1105, 441);
+            this.timerButton.Name = "timerButton";
+            this.timerButton.Size = new System.Drawing.Size(89, 38);
+            this.timerButton.TabIndex = 20;
+            this.timerButton.Text = "Stop";
+            this.timerButton.UseVisualStyleBackColor = true;
+            this.timerButton.Click += new System.EventHandler(this.timerButton_Click);
             // 
-            // id
+            // label33
             // 
-            this.id.HeaderText = "id";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // size
-            // 
-            this.size.HeaderText = "size";
-            this.size.MinimumWidth = 6;
-            this.size.Name = "size";
-            this.size.Width = 125;
-            // 
-            // service_time
-            // 
-            this.service_time.HeaderText = "service time";
-            this.service_time.MinimumWidth = 6;
-            this.service_time.Name = "service_time";
-            this.service_time.Width = 125;
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(43, 28);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(58, 20);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "label33";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 438);
+            this.ClientSize = new System.Drawing.Size(1251, 602);
+            this.Controls.Add(this.timerButton);
             this.Controls.Add(this.buttonX1);
             this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.buttonX5);
@@ -1102,7 +1352,12 @@ namespace RiverPortApp.View
             this.largeShipsPanel.PerformLayout();
             this.mediumShipsPanel.ResumeLayout(false);
             this.mediumShipsPanel.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.storageBigShips)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storageMedShips)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storageSmallShips)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.roadsteadData)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1115,7 +1370,6 @@ namespace RiverPortApp.View
             this.firstPier.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roadsteadData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1220,6 +1474,27 @@ namespace RiverPortApp.View
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn size;
         private System.Windows.Forms.DataGridViewTextBoxColumn service_time;
+        private System.Windows.Forms.Button timerButton;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DataGridView storageSmallShips;
+        private System.Windows.Forms.Label vfdfvd;
+        private System.Windows.Forms.DataGridView storageBigShips;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.DataGridView storageMedShips;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ships_time;
+        private System.Windows.Forms.Label label33;
     }
 }
 

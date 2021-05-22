@@ -29,8 +29,8 @@ namespace RiverPortApp.Presenter
         // Метод для загрузки хранилища судов в форму (используется только для тестов)
         public void loadVesselStorage()
         {
-            view.showVesselStorage(facade.getProcessingComponents().
-                                          getVesselStorage().getStringVessels());
+            view.addVesselsToStorage(facade.getProcessingComponents().
+                                          getVesselStorage());
         }
 
         public void loadTime()
@@ -38,6 +38,17 @@ namespace RiverPortApp.Presenter
             view.showTime(facade.getTimeManager().getMin(),
                           facade.getTimeManager().getHour(),
                           facade.getTimeManager().getDay());
+        }
+
+        public void loadVesselToRoadstead()
+        {
+            if (facade.getShipOutOfStorage() != null)
+            {
+                Vessel vessel = facade.getShipOutOfStorage();
+                view.addVesselToRoadstead(vessel);
+                view.removeVesselFromStorage(vessel);
+                facade.getProcessingComponents().getVesselStorage().deleteVesselById(vessel.getId());
+            }
         }
 
         public void changeTime()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RiverPortApp
 {
-    class VesselStorage: IVessel
+    public class VesselStorage: IVessel
     {
         private List<Vessel> vessels;
 
@@ -27,12 +27,26 @@ namespace RiverPortApp
 
         public Vessel getVessel()
         {
-            Random rand = new Random();
-            int vesselNumber = rand.Next(this.vessels.Count - 1);
-            Vessel vessel = vessels.ElementAt(vesselNumber);
-            this.vessels.RemoveAt(vesselNumber);
+            if (vessels.Count != 0)
+            {
+                //this.vessels.RemoveAt(0);
+                Random rand = new Random();
+                int vesselNumber = rand.Next(this.vessels.Count - 1);
+                Vessel vessel = vessels.ElementAt(vesselNumber);
+                //this.vessels.Remove(vessel);
+                return vessel;
+            }
+            return null;
+        }
 
-            return vessel;
+        public void deleteVesselById(int id)
+        {
+            for (int i = 0; i < this.vessels.Count; i++)
+            {
+                Vessel vessel = this.vessels.ElementAt(i);
+                if (vessel.getId() == id)
+                    this.vessels.Remove(vessel);
+            }
         }
 
         public string getStringVessels()

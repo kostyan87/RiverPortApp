@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace RiverPortApp
 {
-    class Vessel
+    public class Vessel
     {
-        private long id;
+        private int id;
 
         private int size;
 
@@ -27,7 +27,7 @@ namespace RiverPortApp
 
         public int getServiceTime() { return this.serviceTime; }
 
-        public long getId() { return this.id; }
+        public int getId() { return this.id; }
 
         public void setSize(int size) { this.size = size; }
     }

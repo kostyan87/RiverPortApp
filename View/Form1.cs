@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using RiverPortApp.Presenter;
+using RiverPortApp.Model;
 
 namespace RiverPortApp.View
 {
@@ -25,6 +26,8 @@ namespace RiverPortApp.View
         private void buttonStart_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            timerButton.Enabled = true;
+            buttonStart.Enabled = false;
 
             presenter.initFacade(Convert.ToInt32(smallShipsCount.Text),
                                  Convert.ToInt32(mediumShipsCount.Text),
@@ -33,14 +36,9 @@ namespace RiverPortApp.View
                                  Convert.ToInt32(mediumShipsServiceTime.Text),
                                  Convert.ToInt32(largeShipsServiceTime.Text),
                                  Convert.ToInt32(shipsTime.Text));
+
             presenter.loadVesselStorage();
 
-            // Запрещает добавление в таблицу строк пользователем
-            roadsteadData.AllowUserToAddRows = false;
-            roadsteadData.AllowUserToDeleteRows = false;
-            roadsteadData.ReadOnly = true;
-
-            //roadsteadData.Rows.Add("15326", "2", "25");
 
             // Блокирует поля для ввода исходных данных
             smallShipsCount.ReadOnly = true;
@@ -52,10 +50,10 @@ namespace RiverPortApp.View
             shipsTime.ReadOnly = true;
         }
 
-        public void showVesselStorage(string vesselStorage)
+        /*public void showVesselStorage(string vesselStorage)
         {
             testLabel.Text = vesselStorage;
-        }
+        }*/
 
         public void showTime(int min, int hour, int day)
         {
@@ -69,12 +67,85 @@ namespace RiverPortApp.View
             else dayLabel.Text = day.ToString();
         }
 
+        public void addVesselToRoadstead(Vessel vessel)
+        {
+            if (vessel != null)
+                roadsteadData.Rows.Add(vessel.getId(),
+                                       vessel.getSize(),
+                                       vessel.getServiceTime());
+        }
+
+        public void addVesselsToStorage(VesselStorage storage)
+        {
+            foreach(Vessel vessel in storage.getVessels())
+            {
+                if (vessel.getSize() == 1)
+                {
+                    storageSmallShips.Rows.Add(vessel.getId(),
+                                               vessel.getSize(),
+                                               vessel.getServiceTime(),
+                                               15);
+                }
+
+                if (vessel.getSize() == 2)
+                {
+                    storageMedShips.Rows.Add(vessel.getId(),
+                                               vessel.getSize(),
+                                               vessel.getServiceTime(),
+                                               15);
+                }
+
+                if (vessel.getSize() == 3)
+                {
+                    storageBigShips.Rows.Add(vessel.getId(),
+                                               vessel.getSize(),
+                                               vessel.getServiceTime(),
+                                               15);
+                }
+            }
+        }
+
+        public void removeVesselFromStorage(Vessel vessel)
+        {
+            if (vessel.getSize() == 1)
+            {
+                storageSmallShips.Rows.RemoveAt(searchDataRowById(vessel.getId(), storageSmallShips));
+                storageSmallShips.Refresh();
+            }
+
+            if (vessel.getSize() == 2)
+            {
+                storageMedShips.Rows.RemoveAt(searchDataRowById(vessel.getId(), storageMedShips));
+                storageMedShips.Refresh();
+            }
+
+            if (vessel.getSize() == 3)
+            {
+                storageBigShips.Rows.RemoveAt(searchDataRowById(vessel.getId(), storageBigShips));
+                storageBigShips.Refresh();
+            }
+        }
+
+        public int searchDataRowById(int id, DataGridView storageShips)
+        {
+            foreach (DataGridViewRow row in storageShips.Rows)
+            {
+                if (row.Cells[0].Value.ToString().Equals(id.ToString()))
+                {
+                    return row.Index;
+                }
+            }
+            return -1;
+        }
+
         // Реализация секундомера
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             presenter.changeTime();
 
             presenter.loadTime();
+
+            presenter.loadVesselToRoadstead();
 
             //controller.setMin(this.min);
             //controller.setHour(this.hour);
@@ -91,7 +162,7 @@ namespace RiverPortApp.View
             }
         }
 
-        // Ускорение секундомера
+        // Кнопки ускорения секундомера
         private void buttonX1_Click(object sender, EventArgs e)
         {
             timer1.Interval = 100;
@@ -132,6 +203,21 @@ namespace RiverPortApp.View
             if (!Char.IsDigit(number) && number != 8)
             {
                 e.Handled = true;
+            }
+        }
+
+        // Кнопка Stop(Resume)
+        private void timerButton_Click(object sender, EventArgs e)
+        {
+            if (timerButton.Text == "Stop")
+            {
+                timer1.Enabled = false;
+                timerButton.Text = "Resume";
+            }
+            else
+            {
+                timer1.Enabled = true;
+                timerButton.Text = "Stop";
             }
         }
 
