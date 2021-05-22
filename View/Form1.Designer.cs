@@ -77,6 +77,7 @@ namespace RiverPortApp.View
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.service_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -131,6 +132,7 @@ namespace RiverPortApp.View
             this.firstPierLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label33 = new System.Windows.Forms.Label();
             this.testLabel = new System.Windows.Forms.Label();
             this.dayLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -147,7 +149,8 @@ namespace RiverPortApp.View
             this.buttonX2 = new System.Windows.Forms.Button();
             this.buttonX1 = new System.Windows.Forms.Button();
             this.timerButton = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.allHours = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.smallShipsPanel.SuspendLayout();
@@ -623,13 +626,14 @@ namespace RiverPortApp.View
             this.roadsteadData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.size,
-            this.service_time});
+            this.service_time,
+            this.dataGridViewTextBoxColumn12});
             this.roadsteadData.Location = new System.Drawing.Point(31, 23);
             this.roadsteadData.Name = "roadsteadData";
             this.roadsteadData.ReadOnly = true;
             this.roadsteadData.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.roadsteadData.RowTemplate.Height = 29;
-            this.roadsteadData.Size = new System.Drawing.Size(429, 354);
+            this.roadsteadData.Size = new System.Drawing.Size(524, 538);
             this.roadsteadData.TabIndex = 0;
             // 
             // id
@@ -655,6 +659,14 @@ namespace RiverPortApp.View
             this.service_time.Name = "service_time";
             this.service_time.ReadOnly = true;
             this.service_time.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "ships time";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 125;
             // 
             // tabPage4
             // 
@@ -1155,6 +1167,15 @@ namespace RiverPortApp.View
             this.tabPage5.Text = "Test";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(43, 28);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(58, 20);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "label33";
+            // 
             // testLabel
             // 
             this.testLabel.AutoSize = true;
@@ -1181,7 +1202,7 @@ namespace RiverPortApp.View
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(1117, 125);
+            this.label25.Location = new System.Drawing.Point(1117, 46);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(64, 25);
             this.label25.TabIndex = 8;
@@ -1311,20 +1332,33 @@ namespace RiverPortApp.View
             this.timerButton.UseVisualStyleBackColor = true;
             this.timerButton.Click += new System.EventHandler(this.timerButton_Click);
             // 
-            // label33
+            // label35
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(43, 28);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(58, 20);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "label33";
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label35.Location = new System.Drawing.Point(1076, 94);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(155, 20);
+            this.label35.TabIndex = 22;
+            this.label35.Text = "Всего часов прошло:";
+            // 
+            // allHours
+            // 
+            this.allHours.AutoSize = true;
+            this.allHours.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.allHours.Location = new System.Drawing.Point(1138, 136);
+            this.allHours.Name = "allHours";
+            this.allHours.Size = new System.Drawing.Size(23, 28);
+            this.allHours.TabIndex = 23;
+            this.allHours.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1251, 602);
+            this.Controls.Add(this.allHours);
+            this.Controls.Add(this.label35);
             this.Controls.Add(this.timerButton);
             this.Controls.Add(this.buttonX1);
             this.Controls.Add(this.buttonX2);
@@ -1471,9 +1505,6 @@ namespace RiverPortApp.View
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.DataGridView roadsteadData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn service_time;
         private System.Windows.Forms.Button timerButton;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.DataGridView storageSmallShips;
@@ -1495,6 +1526,12 @@ namespace RiverPortApp.View
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ships_time;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn service_time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label allHours;
     }
 }
 

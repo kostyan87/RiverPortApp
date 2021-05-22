@@ -37,7 +37,8 @@ namespace RiverPortApp.Presenter
         {
             view.showTime(facade.getTimeManager().getMin(),
                           facade.getTimeManager().getHour(),
-                          facade.getTimeManager().getDay());
+                          facade.getTimeManager().getDay(),
+                          facade.getTimeManager().getGeneralHour());
         }
 
         public void loadVesselToRoadstead()
@@ -45,6 +46,7 @@ namespace RiverPortApp.Presenter
             if (facade.getShipOutOfStorage() != null)
             {
                 Vessel vessel = facade.getShipOutOfStorage();
+                facade.getProcessingComponents().getRoadstead().pushVessel(vessel);
                 view.addVesselToRoadstead(vessel);
                 view.removeVesselFromStorage(vessel);
                 facade.getProcessingComponents().getVesselStorage().deleteVesselById(vessel.getId());

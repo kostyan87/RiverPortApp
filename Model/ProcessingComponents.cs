@@ -16,14 +16,16 @@ namespace RiverPortApp.Model
 
         public ProcessingComponents(int smallShipsCount, int mediumShipsCount,
                                     int largeShipsCount, int smallShipsServiceTime,
-                                    int mediumShipsServiceTime, int largeShipsServiceTime)
+                                    int mediumShipsServiceTime, int largeShipsServiceTime,
+                                    int shipsTime)
         {
             this.vesselStorage = new VesselStorage(smallShipsCount,
                                                    mediumShipsCount,
                                                    largeShipsCount,
                                                    smallShipsServiceTime,
                                                    mediumShipsServiceTime,
-                                                   largeShipsServiceTime);
+                                                   largeShipsServiceTime,
+                                                   shipsTime);
             this.port = new Port();
             this.roadstead = new Roadstead();
         }

@@ -11,7 +11,7 @@ namespace RiverPortApp.View
     {
         //void showVesselStorage(string vesselStorage);
 
-        void showTime(int min, int hour, int day);
+        void showTime(int min, int hour, int day, int generalHour);
 
         void addVesselToRoadstead(Vessel vessel);
 

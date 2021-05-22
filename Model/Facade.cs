@@ -20,7 +20,8 @@ namespace RiverPortApp.Model
             this.timeManager = new TimeManager(shipsTime);
             this.processingComponents = new ProcessingComponents(smallShipsCount, mediumShipsCount,
                                                                  largeShipsCount, smallShipsServiceTime,
-                                                                 mediumShipsServiceTime, largeShipsServiceTime);
+                                                                 mediumShipsServiceTime, largeShipsServiceTime,
+                                                                 shipsTime);
         }
 
         public ProcessingComponents getProcessingComponents()
@@ -35,10 +36,14 @@ namespace RiverPortApp.Model
 
         public Vessel getShipOutOfStorage()
         {
-            if (this.timeManager.getGeneralHour() % this.timeManager.getShipsTime() == 0 
-                && this.timeManager.getMin() == 0)
+            Vessel vessel = this.processingComponents.getVesselStorage().getVessel();
+            if (vessel != null)
             {
-                return this.processingComponents.getVesselStorage().getVessel();
+                if (this.timeManager.getGeneralHour() % vessel.getShipsTime() == 0
+                && this.timeManager.getMin() == 0)
+                {
+                    return vessel;
+                }
             }
             return null;
         }

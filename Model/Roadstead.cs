@@ -8,7 +8,7 @@ namespace RiverPortApp
 {
     class Roadstead: IVessel
     {
-        private Queue<Vessel> queue;
+        private Queue<Vessel> queue = new Queue<Vessel>();
 
         public Vessel getVessel()
         {

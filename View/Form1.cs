@@ -55,7 +55,7 @@ namespace RiverPortApp.View
             testLabel.Text = vesselStorage;
         }*/
 
-        public void showTime(int min, int hour, int day)
+        public void showTime(int min, int hour, int day, int generalHour)
         {
             if (min < 10) minLabel.Text = "0" + min.ToString();
             else minLabel.Text = min.ToString();
@@ -65,6 +65,8 @@ namespace RiverPortApp.View
 
             if (day < 10) dayLabel.Text = "0" + day.ToString();
             else dayLabel.Text = day.ToString();
+
+            allHours.Text = generalHour.ToString();
         }
 
         public void addVesselToRoadstead(Vessel vessel)
@@ -72,7 +74,8 @@ namespace RiverPortApp.View
             if (vessel != null)
                 roadsteadData.Rows.Add(vessel.getId(),
                                        vessel.getSize(),
-                                       vessel.getServiceTime());
+                                       vessel.getServiceTime(),
+                                       vessel.getShipsTime());
         }
 
         public void addVesselsToStorage(VesselStorage storage)
@@ -84,23 +87,23 @@ namespace RiverPortApp.View
                     storageSmallShips.Rows.Add(vessel.getId(),
                                                vessel.getSize(),
                                                vessel.getServiceTime(),
-                                               15);
+                                               vessel.getShipsTime());
                 }
 
                 if (vessel.getSize() == 2)
                 {
                     storageMedShips.Rows.Add(vessel.getId(),
-                                               vessel.getSize(),
-                                               vessel.getServiceTime(),
-                                               15);
+                                             vessel.getSize(),
+                                             vessel.getServiceTime(),
+                                             vessel.getShipsTime());
                 }
 
                 if (vessel.getSize() == 3)
                 {
                     storageBigShips.Rows.Add(vessel.getId(),
-                                               vessel.getSize(),
-                                               vessel.getServiceTime(),
-                                               15);
+                                             vessel.getSize(),
+                                             vessel.getServiceTime(),
+                                             vessel.getShipsTime());
                 }
             }
         }

@@ -15,26 +15,24 @@ namespace RiverPortApp
                              int largeShipsCount,
                              int smallShipsServiceTime,
                              int mediumShipsServiceTime,
-                             int largeShipsServiceTime)
+                             int largeShipsServiceTime,
+                             int shipsTime)
         {
             this.vessels = VesselStorageUtils.setVessels(smallShipsCount,
                                                          mediumShipsCount,
                                                          largeShipsCount,
                                                          smallShipsServiceTime,
                                                          mediumShipsServiceTime,
-                                                         largeShipsServiceTime);
+                                                         largeShipsServiceTime,
+                                                         shipsTime);
         }
 
         public Vessel getVessel()
         {
             if (vessels.Count != 0)
             {
-                //this.vessels.RemoveAt(0);
-                Random rand = new Random();
-                int vesselNumber = rand.Next(this.vessels.Count - 1);
-                Vessel vessel = vessels.ElementAt(vesselNumber);
-                //this.vessels.Remove(vessel);
-                return vessel;
+                //Random rand = new Random();
+                return vessels.ElementAt(0);
             }
             return null;
         }

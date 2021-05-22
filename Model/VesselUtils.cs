@@ -20,5 +20,19 @@ namespace RiverPortApp
 
             return Convert.ToInt32(id);
         }
+
+        public static int generateDeviation(int shipsTime)
+        {
+            Random rand = new Random();
+            int sign = rand.Next(2);
+            int deviation;
+
+            if (sign == 0)
+                deviation = rand.Next((shipsTime / 2));
+            else
+                deviation = -rand.Next((shipsTime / 2));
+
+            return deviation;
+        }
     }
 }
