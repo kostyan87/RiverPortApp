@@ -91,7 +91,7 @@ namespace RiverPortApp.View
             this.label19 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.fourthPierServiceNow = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -103,7 +103,7 @@ namespace RiverPortApp.View
             this.label13 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.thirdPierServiceNow = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -115,7 +115,7 @@ namespace RiverPortApp.View
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.secondPierServiceNow = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.firstPier = new System.Windows.Forms.Panel();
@@ -687,7 +687,7 @@ namespace RiverPortApp.View
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(603, 369);
+            this.textBox1.Location = new System.Drawing.Point(558, 493);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(155, 27);
             this.textBox1.TabIndex = 14;
@@ -695,7 +695,7 @@ namespace RiverPortApp.View
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(377, 369);
+            this.label24.Location = new System.Drawing.Point(332, 493);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(208, 20);
             this.label24.TabIndex = 13;
@@ -704,7 +704,7 @@ namespace RiverPortApp.View
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(439, 369);
+            this.label23.Location = new System.Drawing.Point(394, 493);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(0, 20);
             this.label23.TabIndex = 12;
@@ -720,10 +720,10 @@ namespace RiverPortApp.View
             this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.textBox14);
             this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.textBox15);
+            this.panel3.Controls.Add(this.fourthPierServiceNow);
             this.panel3.Controls.Add(this.label21);
             this.panel3.Controls.Add(this.label22);
-            this.panel3.Location = new System.Drawing.Point(562, 15);
+            this.panel3.Location = new System.Drawing.Point(807, 111);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(169, 340);
             this.panel3.TabIndex = 11;
@@ -792,12 +792,12 @@ namespace RiverPortApp.View
             this.label20.Text = "Всего обслужено";
             this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox15
+            // fourthPierServiceNow
             // 
-            this.textBox15.Location = new System.Drawing.Point(26, 96);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(125, 27);
-            this.textBox15.TabIndex = 2;
+            this.fourthPierServiceNow.Location = new System.Drawing.Point(26, 96);
+            this.fourthPierServiceNow.Name = "fourthPierServiceNow";
+            this.fourthPierServiceNow.Size = new System.Drawing.Size(125, 27);
+            this.fourthPierServiceNow.TabIndex = 2;
             // 
             // label21
             // 
@@ -829,10 +829,10 @@ namespace RiverPortApp.View
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.textBox9);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.textBox10);
+            this.panel2.Controls.Add(this.thirdPierServiceNow);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Location = new System.Drawing.Point(378, 15);
+            this.panel2.Location = new System.Drawing.Point(582, 111);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(169, 340);
             this.panel2.TabIndex = 11;
@@ -901,12 +901,12 @@ namespace RiverPortApp.View
             this.label14.Text = "Всего обслужено";
             this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox10
+            // thirdPierServiceNow
             // 
-            this.textBox10.Location = new System.Drawing.Point(26, 96);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 27);
-            this.textBox10.TabIndex = 2;
+            this.thirdPierServiceNow.Location = new System.Drawing.Point(26, 96);
+            this.thirdPierServiceNow.Name = "thirdPierServiceNow";
+            this.thirdPierServiceNow.Size = new System.Drawing.Size(125, 27);
+            this.thirdPierServiceNow.TabIndex = 2;
             // 
             // label15
             // 
@@ -938,10 +938,10 @@ namespace RiverPortApp.View
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.secondPierServiceNow);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(192, 15);
+            this.panel1.Location = new System.Drawing.Point(352, 110);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(169, 340);
             this.panel1.TabIndex = 1;
@@ -1010,12 +1010,12 @@ namespace RiverPortApp.View
             this.label8.Text = "Всего обслужено";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox5
+            // secondPierServiceNow
             // 
-            this.textBox5.Location = new System.Drawing.Point(26, 96);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 27);
-            this.textBox5.TabIndex = 2;
+            this.secondPierServiceNow.Location = new System.Drawing.Point(26, 96);
+            this.secondPierServiceNow.Name = "secondPierServiceNow";
+            this.secondPierServiceNow.Size = new System.Drawing.Size(125, 27);
+            this.secondPierServiceNow.TabIndex = 2;
             // 
             // label9
             // 
@@ -1050,7 +1050,7 @@ namespace RiverPortApp.View
             this.firstPier.Controls.Add(this.firstPierServiceNow);
             this.firstPier.Controls.Add(this.serviceNowLabel);
             this.firstPier.Controls.Add(this.firstPierLabel);
-            this.firstPier.Location = new System.Drawing.Point(8, 15);
+            this.firstPier.Location = new System.Drawing.Point(121, 110);
             this.firstPier.Name = "firstPier";
             this.firstPier.Size = new System.Drawing.Size(169, 340);
             this.firstPier.TabIndex = 0;
@@ -1426,7 +1426,7 @@ namespace RiverPortApp.View
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox fourthPierServiceNow;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel2;
@@ -1438,7 +1438,7 @@ namespace RiverPortApp.View
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox thirdPierServiceNow;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel1;
@@ -1450,7 +1450,7 @@ namespace RiverPortApp.View
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox secondPierServiceNow;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox firstPierLargeServ;

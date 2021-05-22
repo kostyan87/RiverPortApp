@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RiverPortApp
 {
-    class Roadstead: IVessel
+    public class Roadstead: IVessel
     {
         private Queue<Vessel> queue = new Queue<Vessel>();
 
@@ -28,6 +28,16 @@ namespace RiverPortApp
         public Vessel getPeekVessel()
         {
             return queue.Peek();
+        }
+
+        public Queue<Vessel> getQueue()
+        {
+            return queue;
+        }
+
+        public bool isEmpty()
+        {
+            return this.queue.Count == 0;
         }
     }
 }

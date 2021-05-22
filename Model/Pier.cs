@@ -6,44 +6,47 @@ using System.Threading.Tasks;
 
 namespace RiverPortApp
 {
-    class Pier
+    public class Pier
     {
-        private int currentServiceShip;
+        private Vessel currentServiceShip;
 
-        private int numberOfShipsServ;
+        private int numberOfShipsServ = 0;
 
-        private int numberOfSmallShipsServ;
+        private int numberOfSmallShipsServ = 0;
 
-        private int numberOfMedShipsServ;
+        private int numberOfMedShipsServ = 0;
 
-        private int numberOfLargeShipsServ;
+        private int numberOfLargeShipsServ = 0;
 
-        private int getCurrentServiceShip()
+        public bool isFree = true;
+
+        public Vessel getCurrentServiceShip()
         {
             return this.currentServiceShip;
         }
 
-        private bool isFree()
+        public void setCurrentServiceShip(Vessel vessel)
         {
-            return false;
+            isFree = false;
+            this.currentServiceShip = vessel;
         }
 
-        private int getNumberOfShipsServ()
+        public int getNumberOfShipsServ()
         {
             return this.numberOfShipsServ;
         }
 
-        private int getNumberOfSmallShipsServ()
+        public int getNumberOfSmallShipsServ()
         {
             return this.numberOfSmallShipsServ;
         }
 
-        private int getNumberOfMedShipsServ()
+        public int getNumberOfMedShipsServ()
         {
             return this.numberOfMedShipsServ;
         }
 
-        private int getNumberOfLargeShipsServ()
+        public int getNumberOfLargeShipsServ()
         {
             return this.numberOfLargeShipsServ;
         }

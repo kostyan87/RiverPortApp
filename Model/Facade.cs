@@ -47,5 +47,21 @@ namespace RiverPortApp.Model
             }
             return null;
         }
+
+        public void addShipToPier()
+        {
+            if (!this.processingComponents.getPort().getRoadstead().isEmpty())
+            {
+                Port port = this.processingComponents.getPort();
+                Roadstead roadstead = port.getRoadstead();
+                Vessel vessel = roadstead.getPeekVessel();
+                int startIndex = port.willBeEnoughPiers(vessel.getSize());
+
+                if (startIndex != -1)
+                {
+                    port.takePiers(vessel, startIndex);
+                }
+            }
+        }
     }
 }

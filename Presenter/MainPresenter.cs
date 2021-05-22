@@ -46,7 +46,7 @@ namespace RiverPortApp.Presenter
             if (facade.getShipOutOfStorage() != null)
             {
                 Vessel vessel = facade.getShipOutOfStorage();
-                facade.getProcessingComponents().getRoadstead().pushVessel(vessel);
+                facade.getProcessingComponents().getPort().getRoadstead().pushVessel(vessel);
                 view.addVesselToRoadstead(vessel);
                 view.removeVesselFromStorage(vessel);
                 facade.getProcessingComponents().getVesselStorage().deleteVesselById(vessel.getId());
@@ -56,6 +56,12 @@ namespace RiverPortApp.Presenter
         public void changeTime()
         {
             facade.getTimeManager().increaseTime();
+        }
+
+        public void loadVesselToPiers()
+        {
+            facade.addShipToPier();
+            view.addVesselsToStorage(facade.getProcessingComponents().getPort());
         }
     }
 }

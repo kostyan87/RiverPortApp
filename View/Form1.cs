@@ -108,6 +108,38 @@ namespace RiverPortApp.View
             }
         }
 
+        public void addVesselsToStorage(Port port)
+        {
+            Pier firstPier = port.getPiers()[0];
+            Pier secondPier = port.getPiers()[1];
+            Pier thirdPier = port.getPiers()[2];
+            Pier fourthPier = port.getPiers()[3];
+
+            if (!firstPier.isFree)
+            {
+                firstPierServiceNow.Text = firstPier.getCurrentServiceShip().getId().ToString() +
+                                           "; " + firstPier.getCurrentServiceShip().getSize().ToString();
+            }
+
+            if (!secondPier.isFree)
+            {
+                secondPierServiceNow.Text = secondPier.getCurrentServiceShip().getId().ToString() +
+                                           "; " + secondPier.getCurrentServiceShip().getSize().ToString();
+            }
+
+            if (!thirdPier.isFree)
+            {
+                thirdPierServiceNow.Text = thirdPier.getCurrentServiceShip().getId().ToString() +
+                                           "; " + thirdPier.getCurrentServiceShip().getSize().ToString();
+            }
+
+            if (!fourthPier.isFree)
+            {
+                fourthPierServiceNow.Text = fourthPier.getCurrentServiceShip().getId().ToString() +
+                                           "; " + fourthPier.getCurrentServiceShip().getSize().ToString();
+            }
+        }
+
         public void removeVesselFromStorage(Vessel vessel)
         {
             if (vessel.getSize() == 1)
@@ -149,6 +181,15 @@ namespace RiverPortApp.View
             presenter.loadTime();
 
             presenter.loadVesselToRoadstead();
+
+            // Добавление судов на причалы
+            presenter.loadVesselToPiers();
+
+            // Удаление судов с рейда
+            // presenter.removeVesselFromPiers();
+
+            // Удаление судов с причалов
+            // presenter.removeVesselFromPiers();
 
             //controller.setMin(this.min);
             //controller.setHour(this.hour);

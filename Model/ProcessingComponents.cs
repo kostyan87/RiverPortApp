@@ -10,8 +10,6 @@ namespace RiverPortApp.Model
     {
         private VesselStorage vesselStorage;
 
-        private Roadstead roadstead;
-
         private Port port;
 
         public ProcessingComponents(int smallShipsCount, int mediumShipsCount,
@@ -27,7 +25,6 @@ namespace RiverPortApp.Model
                                                    largeShipsServiceTime,
                                                    shipsTime);
             this.port = new Port();
-            this.roadstead = new Roadstead();
         }
 
         public VesselStorage getVesselStorage()
@@ -38,11 +35,6 @@ namespace RiverPortApp.Model
         public Port getPort()
         {
             return this.port;
-        }
-
-        public Roadstead getRoadstead()
-        {
-            return this.roadstead;
         }
     }
 }
