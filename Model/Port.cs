@@ -54,7 +54,12 @@ namespace RiverPortApp
                 }
             }
 
-            if (maxFreePiersCount != shipSize)
+            if (freePiersCount > maxFreePiersCount)
+            {
+                maxFreePiersCount = freePiersCount;
+            }
+
+            if (maxFreePiersCount < shipSize)
             {
                 startIndex = -1;
             }
@@ -64,7 +69,7 @@ namespace RiverPortApp
 
         public void takePiers(Vessel vessel, int startIndex)
         {
-            for (int i = startIndex; i <= vessel.getSize(); i++)
+            for (int i = startIndex; i < startIndex + vessel.getSize(); i++)
             {
                 piers[i].setCurrentServiceShip(vessel);
             }

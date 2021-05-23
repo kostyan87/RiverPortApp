@@ -20,7 +20,7 @@ namespace RiverPortApp
             queue.Enqueue(vessel);
         }
 
-        public void popVessel(Vessel vessel)
+        public void popVessel()
         {
             queue.Dequeue();
         }

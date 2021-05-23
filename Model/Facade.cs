@@ -60,6 +60,7 @@ namespace RiverPortApp.Model
                 if (startIndex != -1)
                 {
                     port.takePiers(vessel, startIndex);
+                    roadstead.popVessel();
                 }
             }
         }
