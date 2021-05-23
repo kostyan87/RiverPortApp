@@ -48,7 +48,7 @@ namespace RiverPortApp.Model
             return null;
         }
 
-        public void addShipToPier()
+        public int addShipToPier()
         {
             if (!this.processingComponents.getPort().getRoadstead().isEmpty())
             {
@@ -59,10 +59,14 @@ namespace RiverPortApp.Model
 
                 if (startIndex != -1)
                 {
+                    int id = roadstead.getPeekVessel().getId();
                     port.takePiers(vessel, startIndex);
+                    vessel.setPierCallTime(this.timeManager.getGeneralHour());
                     roadstead.popVessel();
+                    return id;
                 }
             }
+            return -1;
         }
     }
 }

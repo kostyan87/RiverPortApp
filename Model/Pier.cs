@@ -50,5 +50,34 @@ namespace RiverPortApp
         {
             return this.numberOfLargeShipsServ;
         }
+
+        public void increaseNumberOfShipsServ()
+        {
+            this.numberOfShipsServ++;
+        }
+
+        public void increaseNumberOfSmallShipsServ(int size)
+        {
+            if (size == 1)
+            {
+                this.numberOfSmallShipsServ++;
+            }
+        }
+
+        public void increaseNumberOfMedShipsServ(int size)
+        {
+            if (size == 2)
+            {
+                this.numberOfMedShipsServ++;
+            }
+        }
+
+        public void increaseNumberOfLargeShipsServ(int size)
+        {
+            if (size == 3)
+            {
+                this.numberOfLargeShipsServ++;
+            }
+        }
     }
 }

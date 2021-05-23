@@ -19,6 +19,10 @@ namespace RiverPortApp.View
 
         void addVesselsToStorage(VesselStorage storage);
 
-        void addVesselsToStorage(Port port);
+        void addVesselsToPiers(Port port);
+
+        void removeVesselFromRoadstead(int id);
+
+        void cleanPier(int pierNumber);
     }
 }

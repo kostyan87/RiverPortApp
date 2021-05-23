@@ -1,5 +1,6 @@
 ﻿using RiverPortApp.View;
 using RiverPortApp.Model;
+using System.Collections.Generic;
 
 namespace RiverPortApp.Presenter
 {
@@ -60,8 +61,37 @@ namespace RiverPortApp.Presenter
 
         public void loadVesselToPiers()
         {
-            facade.addShipToPier();
-            view.addVesselsToStorage(facade.getProcessingComponents().getPort());
+            Port port = facade.getProcessingComponents().getPort();
+            int id = facade.addShipToPier();
+            if (id != -1)
+            {
+                view.removeVesselFromRoadstead(id);
+            }
+            view.addVesselsToPiers(port);
+        }
+
+        public void removeVesselFromPier()
+        {
+            List<Pier> piers = facade.getProcessingComponents().getPort().getPiers();
+
+            for (int i = 0; i < piers.Count; i++)
+            {
+                if (!piers[i].isFree)
+                {
+                    int time = piers[i].getCurrentServiceShip().getServiceTime()
+                           + piers[i].getCurrentServiceShip().getPierCallTime();
+                    int currentTime = facade.getTimeManager().getGeneralHour();
+                    if (time == currentTime)
+                    {
+                        piers[i].isFree = true;
+                        view.cleanPier(i);
+                        piers[i].increaseNumberOfShipsServ();
+                        piers[i].increaseNumberOfSmallShipsServ(piers[i].getCurrentServiceShip().getSize());
+                        piers[i].increaseNumberOfMedShipsServ(piers[i].getCurrentServiceShip().getSize());
+                        piers[i].increaseNumberOfLargeShipsServ(piers[i].getCurrentServiceShip().getSize());
+                    }
+                }
+            }
         }
     }
 }

@@ -108,7 +108,7 @@ namespace RiverPortApp.View
             }
         }
 
-        public void addVesselsToStorage(Port port)
+        public void addVesselsToPiers(Port port)
         {
             Pier firstPier = port.getPiers()[0];
             Pier secondPier = port.getPiers()[1];
@@ -117,26 +117,50 @@ namespace RiverPortApp.View
 
             if (!firstPier.isFree)
             {
-                firstPierServiceNow.Text = firstPier.getCurrentServiceShip().getId().ToString() +
-                                           "; " + firstPier.getCurrentServiceShip().getSize().ToString();
+                firstPierServiceNow.Text = "id: " + firstPier.getCurrentServiceShip().getId().ToString() +
+                                           "; " + "size: " +
+                                           firstPier.getCurrentServiceShip().getSize().ToString() + "service time: " +
+                                           "; " + firstPier.getCurrentServiceShip().getServiceTime().ToString();
+                firstPierTotalServ.Text = firstPier.getNumberOfShipsServ().ToString();
+                firstPierSmallServ.Text = firstPier.getNumberOfSmallShipsServ().ToString();
+                firstPierMedServ.Text = firstPier.getNumberOfMedShipsServ().ToString();
+                firstPierLargeServ.Text = firstPier.getNumberOfLargeShipsServ().ToString();
             }
 
             if (!secondPier.isFree)
             {
-                secondPierServiceNow.Text = secondPier.getCurrentServiceShip().getId().ToString() +
-                                           "; " + secondPier.getCurrentServiceShip().getSize().ToString();
+                secondPierServiceNow.Text = "id: " + secondPier.getCurrentServiceShip().getId().ToString() +
+                                           "; " + "size: " +
+                                           secondPier.getCurrentServiceShip().getSize().ToString() + "service time: " +
+                                           "; " + secondPier.getCurrentServiceShip().getServiceTime().ToString();
+                secondPierTotalServ.Text = secondPier.getNumberOfShipsServ().ToString();
+                secondPierSmallServ.Text = secondPier.getNumberOfSmallShipsServ().ToString();
+                secondPierMedServ.Text = secondPier.getNumberOfMedShipsServ().ToString();
+                secondPierLargeServ.Text = secondPier.getNumberOfLargeShipsServ().ToString();
             }
 
             if (!thirdPier.isFree)
             {
-                thirdPierServiceNow.Text = thirdPier.getCurrentServiceShip().getId().ToString() +
-                                           "; " + thirdPier.getCurrentServiceShip().getSize().ToString();
+                thirdPierServiceNow.Text = "id: " + thirdPier.getCurrentServiceShip().getId().ToString() +
+                                           "; " + "size: " +
+                                           thirdPier.getCurrentServiceShip().getSize().ToString() + "service time: " +
+                                           "; " + thirdPier.getCurrentServiceShip().getServiceTime().ToString();
+                thirdPierTotalServ.Text = thirdPier.getNumberOfShipsServ().ToString();
+                thirdPierSmallServ.Text = thirdPier.getNumberOfSmallShipsServ().ToString();
+                thirdPierMedServ.Text = thirdPier.getNumberOfMedShipsServ().ToString();
+                thirdPierLargeServ.Text = thirdPier.getNumberOfLargeShipsServ().ToString();
             }
 
             if (!fourthPier.isFree)
             {
-                fourthPierServiceNow.Text = fourthPier.getCurrentServiceShip().getId().ToString() +
-                                           "; " + fourthPier.getCurrentServiceShip().getSize().ToString();
+                fourthPierServiceNow.Text = "id: " + fourthPier.getCurrentServiceShip().getId().ToString() +
+                                           "; " + "size: " +
+                                           fourthPier.getCurrentServiceShip().getSize().ToString() + "service time: " +
+                                           "; " + fourthPier.getCurrentServiceShip().getServiceTime().ToString();
+                fourthPierTotalServ.Text = fourthPier.getNumberOfShipsServ().ToString();
+                fourthPierSmallServ.Text = fourthPier.getNumberOfSmallShipsServ().ToString();
+                fourthPierMedServ.Text = fourthPier.getNumberOfMedShipsServ().ToString();
+                fourthPierLargeServ.Text = fourthPier.getNumberOfLargeShipsServ().ToString();
             }
         }
 
@@ -173,6 +197,39 @@ namespace RiverPortApp.View
             return -1;
         }
 
+        public void removeVesselFromRoadstead(int id)
+        {
+            int index = searchDataRowById(id, roadsteadData);
+            if (index != -1)
+            {
+                roadsteadData.Rows.RemoveAt(index);
+            }
+            roadsteadData.Refresh();
+        }
+
+        public void cleanPier(int pierNumber)
+        {
+            if (pierNumber == 0)
+            {
+                firstPierServiceNow.Text = "";
+            }
+
+            if (pierNumber == 1)
+            {
+                secondPierServiceNow.Text = "";
+            }
+
+            if (pierNumber == 2)
+            {
+                thirdPierServiceNow.Text = "";
+            }
+
+            if (pierNumber == 3)
+            {
+                fourthPierServiceNow.Text = "";
+            }
+        }
+
         // Реализация секундомера
         private void timer1_Tick_1(object sender, EventArgs e)
         {
@@ -185,25 +242,10 @@ namespace RiverPortApp.View
             // Добавление судов на причалы
             presenter.loadVesselToPiers();
 
-            // Удаление судов с рейда
-            // presenter.removeVesselFromPiers();
+            presenter.removeVesselFromPier();
 
             // Удаление судов с причалов
             // presenter.removeVesselFromPiers();
-
-            //controller.setMin(this.min);
-            //controller.setHour(this.hour);
-            //controller.setDay(this.day);
-
-            // Добавление в рейд
-            //if (this.hour % Convert.ToInt32(shipsTime.Text) == 0)
-            {
-                //Vessel currentVessel = controller.getVesselStorage().getVessel();
-
-                //controller.getRoadstead().pushVessel(currentVessel);
-
-                //roadsteadData.Rows.Add(currentVessel.getId(), currentVessel.getSize(), currentVessel.getServiceTime());
-            }
         }
 
         // Кнопки ускорения секундомера
