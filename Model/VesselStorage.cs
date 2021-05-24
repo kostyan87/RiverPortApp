@@ -10,6 +10,8 @@ namespace RiverPortApp
     {
         private List<Vessel> vessels;
 
+        private int vesselsCount;
+
         public VesselStorage(int smallShipsCount,
                              int mediumShipsCount,
                              int largeShipsCount,
@@ -25,6 +27,17 @@ namespace RiverPortApp
                                                          mediumShipsServiceTime,
                                                          largeShipsServiceTime,
                                                          shipsTime);
+            this.vesselsCount = smallShipsCount + mediumShipsCount * 2 + largeShipsCount * 3;
+        }
+
+        public void decreaseVesselCount()
+        {
+            this.vesselsCount--;
+        }
+
+        public int getVesselCount()
+        {
+            return this.vesselsCount;
         }
 
         public Vessel getVessel()

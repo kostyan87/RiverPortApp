@@ -12,6 +12,12 @@ namespace RiverPortApp.Model
 
         private ProcessingComponents processingComponents;
 
+        private double smallVesselMiddleTime;
+
+        private double medVesselMiddleTime;
+
+        private double largeVesselMiddleTime;
+
         public Facade(int smallShipsCount, int mediumShipsCount,
                       int largeShipsCount, int smallShipsServiceTime,
                       int mediumShipsServiceTime, int largeShipsServiceTime,
@@ -22,6 +28,47 @@ namespace RiverPortApp.Model
                                                                  largeShipsCount, smallShipsServiceTime,
                                                                  mediumShipsServiceTime, largeShipsServiceTime,
                                                                  shipsTime);
+        }
+
+        public void calculateAverageTime(int smallShipsCount, int mediumShipsCount,
+                                         int largeShipsCount)
+        {
+            smallVesselMiddleTime = smallVesselMiddleTime / smallShipsCount;
+            medVesselMiddleTime = medVesselMiddleTime / mediumShipsCount;
+            largeVesselMiddleTime = largeVesselMiddleTime / largeShipsCount;
+        }
+
+        public double getSmallVesselMiddleTime()
+        {
+            return this.smallVesselMiddleTime;
+        }
+
+        public double getMedVesselMiddleTime()
+        {
+            return this.medVesselMiddleTime;
+        }
+
+        public double getLargeVesselMiddleTime()
+        {
+            return this.largeVesselMiddleTime;
+        }
+
+        public void setVesselMiddleTime(Vessel vessel, int time)
+        {
+            if (vessel.getSize() == 1)
+            {
+                this.smallVesselMiddleTime = time;
+            }
+
+            if (vessel.getSize() == 1)
+            {
+                this.medVesselMiddleTime = time;
+            }
+
+            if (vessel.getSize() == 1)
+            {
+                this.largeVesselMiddleTime = time;
+            }
         }
 
         public ProcessingComponents getProcessingComponents()
@@ -62,6 +109,8 @@ namespace RiverPortApp.Model
                     int id = roadstead.getPeekVessel().getId();
                     port.takePiers(vessel, startIndex);
                     vessel.setPierCallTime(this.timeManager.getGeneralHour());
+                    this.setVesselMiddleTime(vessel, vessel.getPierCallTime()
+                                                    - vessel.getTimeArrivalRoadstead());
                     roadstead.popVessel();
                     return id;
                 }

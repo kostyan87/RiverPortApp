@@ -18,18 +18,21 @@ namespace RiverPortApp
 
         private int shipsTime;
 
-        private int pierCallTime;
+        private int timeArrivalRoadstead;
 
-        private int timeInRoadstead = 0;
+        private int pierCallTime;
 
         public Vessel(int id, int size, int serviceTime, int shipsTime)
         {
             this.id = id;
             this.size = size;
             this.serviceTime = serviceTime;
+            this.serviceTime = this.serviceTime + VesselUtils.generateDeviation(this.serviceTime);
             this.shipsTime = shipsTime;
             this.standartShipsTime = shipsTime;
         }
+
+        public int getTimeArrivalRoadstead() { return this.timeArrivalRoadstead; }
 
         public int getSize() { return this.size; }
 
@@ -57,6 +60,11 @@ namespace RiverPortApp
         public void setPierCallTime(int hour)
         {
             this.pierCallTime = hour;
+        }
+
+        public void setTimeArrivalRoadstead(int hour)
+        {
+            this.timeArrivalRoadstead = hour;
         }
     }
 }

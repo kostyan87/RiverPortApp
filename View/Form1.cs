@@ -23,64 +23,10 @@ namespace RiverPortApp.View
             presenter = new MainPresenter(this);
         }
 
-        private void buttonStart_Click(object sender, EventArgs e)
-        {
-            timer1.Enabled = true;
-            timerButton.Enabled = true;
-            buttonStart.Enabled = false;
-
-            presenter.initFacade(Convert.ToInt32(smallShipsCount.Text),
-                                 Convert.ToInt32(mediumShipsCount.Text),
-                                 Convert.ToInt32(largeShipsCount.Text),
-                                 Convert.ToInt32(smallShipsServiceTime.Text),
-                                 Convert.ToInt32(mediumShipsServiceTime.Text),
-                                 Convert.ToInt32(largeShipsServiceTime.Text),
-                                 Convert.ToInt32(shipsTime.Text));
-
-            presenter.loadVesselStorage();
-
-
-            // Блокирует поля для ввода исходных данных
-            smallShipsCount.ReadOnly = true;
-            mediumShipsCount.ReadOnly = true;
-            largeShipsCount.ReadOnly = true;
-            smallShipsServiceTime.ReadOnly = true;
-            mediumShipsServiceTime.ReadOnly = true;
-            largeShipsServiceTime.ReadOnly = true;
-            shipsTime.ReadOnly = true;
-        }
-
-        /*public void showVesselStorage(string vesselStorage)
-        {
-            testLabel.Text = vesselStorage;
-        }*/
-
-        public void showTime(int min, int hour, int day, int generalHour)
-        {
-            if (min < 10) minLabel.Text = "0" + min.ToString();
-            else minLabel.Text = min.ToString();
-
-            if (hour < 10) hourLabel.Text = "0" + hour.ToString();
-            else hourLabel.Text = hour.ToString();
-
-            if (day < 10) dayLabel.Text = "0" + day.ToString();
-            else dayLabel.Text = day.ToString();
-
-            allHours.Text = generalHour.ToString();
-        }
-
-        public void addVesselToRoadstead(Vessel vessel)
-        {
-            if (vessel != null)
-                roadsteadData.Rows.Add(vessel.getId(),
-                                       vessel.getSize(),
-                                       vessel.getServiceTime(),
-                                       vessel.getShipsTime());
-        }
-
+        // Загружает судна во вкладку "Обслуживаемые суда"
         public void addVesselsToStorage(VesselStorage storage)
         {
-            foreach(Vessel vessel in storage.getVessels())
+            foreach (Vessel vessel in storage.getVessels())
             {
                 if (vessel.getSize() == 1)
                 {
@@ -108,6 +54,29 @@ namespace RiverPortApp.View
             }
         }
 
+        public void showTime(int min, int hour, int day, int generalHour)
+        {
+            if (min < 10) minLabel.Text = "0" + min.ToString();
+            else minLabel.Text = min.ToString();
+
+            if (hour < 10) hourLabel.Text = "0" + hour.ToString();
+            else hourLabel.Text = hour.ToString();
+
+            if (day < 10) dayLabel.Text = "0" + day.ToString();
+            else dayLabel.Text = day.ToString();
+
+            allHours.Text = generalHour.ToString();
+        }
+
+        public void addVesselToRoadstead(Vessel vessel)
+        {
+            if (vessel != null)
+                roadsteadData.Rows.Add(vessel.getId(),
+                                       vessel.getSize(),
+                                       vessel.getServiceTime(),
+                                       vessel.getShipsTime());
+        }
+
         public void addVesselsToPiers(Port port)
         {
             Pier firstPier = port.getPiers()[0];
@@ -120,11 +89,7 @@ namespace RiverPortApp.View
                 firstPierServiceNow.Text = "id: " + firstPier.getCurrentServiceShip().getId().ToString() +
                                            "; " + "size: " +
                                            firstPier.getCurrentServiceShip().getSize().ToString() + "service time: " +
-                                           "; " + firstPier.getCurrentServiceShip().getServiceTime().ToString();
-                firstPierTotalServ.Text = firstPier.getNumberOfShipsServ().ToString();
-                firstPierSmallServ.Text = firstPier.getNumberOfSmallShipsServ().ToString();
-                firstPierMedServ.Text = firstPier.getNumberOfMedShipsServ().ToString();
-                firstPierLargeServ.Text = firstPier.getNumberOfLargeShipsServ().ToString();
+                                           firstPier.getCurrentServiceShip().getServiceTime().ToString();
             }
 
             if (!secondPier.isFree)
@@ -132,11 +97,7 @@ namespace RiverPortApp.View
                 secondPierServiceNow.Text = "id: " + secondPier.getCurrentServiceShip().getId().ToString() +
                                            "; " + "size: " +
                                            secondPier.getCurrentServiceShip().getSize().ToString() + "service time: " +
-                                           "; " + secondPier.getCurrentServiceShip().getServiceTime().ToString();
-                secondPierTotalServ.Text = secondPier.getNumberOfShipsServ().ToString();
-                secondPierSmallServ.Text = secondPier.getNumberOfSmallShipsServ().ToString();
-                secondPierMedServ.Text = secondPier.getNumberOfMedShipsServ().ToString();
-                secondPierLargeServ.Text = secondPier.getNumberOfLargeShipsServ().ToString();
+                                           secondPier.getCurrentServiceShip().getServiceTime().ToString();
             }
 
             if (!thirdPier.isFree)
@@ -144,11 +105,7 @@ namespace RiverPortApp.View
                 thirdPierServiceNow.Text = "id: " + thirdPier.getCurrentServiceShip().getId().ToString() +
                                            "; " + "size: " +
                                            thirdPier.getCurrentServiceShip().getSize().ToString() + "service time: " +
-                                           "; " + thirdPier.getCurrentServiceShip().getServiceTime().ToString();
-                thirdPierTotalServ.Text = thirdPier.getNumberOfShipsServ().ToString();
-                thirdPierSmallServ.Text = thirdPier.getNumberOfSmallShipsServ().ToString();
-                thirdPierMedServ.Text = thirdPier.getNumberOfMedShipsServ().ToString();
-                thirdPierLargeServ.Text = thirdPier.getNumberOfLargeShipsServ().ToString();
+                                           thirdPier.getCurrentServiceShip().getServiceTime().ToString();
             }
 
             if (!fourthPier.isFree)
@@ -156,11 +113,7 @@ namespace RiverPortApp.View
                 fourthPierServiceNow.Text = "id: " + fourthPier.getCurrentServiceShip().getId().ToString() +
                                            "; " + "size: " +
                                            fourthPier.getCurrentServiceShip().getSize().ToString() + "service time: " +
-                                           "; " + fourthPier.getCurrentServiceShip().getServiceTime().ToString();
-                fourthPierTotalServ.Text = fourthPier.getNumberOfShipsServ().ToString();
-                fourthPierSmallServ.Text = fourthPier.getNumberOfSmallShipsServ().ToString();
-                fourthPierMedServ.Text = fourthPier.getNumberOfMedShipsServ().ToString();
-                fourthPierLargeServ.Text = fourthPier.getNumberOfLargeShipsServ().ToString();
+                                           fourthPier.getCurrentServiceShip().getServiceTime().ToString();
             }
         }
 
@@ -207,11 +160,52 @@ namespace RiverPortApp.View
             roadsteadData.Refresh();
         }
 
+        public void changePierData(Port port, int numberOfPier)
+        {
+            Pier firstPier = port.getPiers()[0];
+            Pier secondPier = port.getPiers()[1];
+            Pier thirdPier = port.getPiers()[2];
+            Pier fourthPier = port.getPiers()[3];
+
+            if (numberOfPier == 0)
+            {
+                firstPierTotalServ.Text = firstPier.getNumberOfShipsServ().ToString();
+                firstPierSmallServ.Text = firstPier.getNumberOfSmallShipsServ().ToString();
+                firstPierMedServ.Text = firstPier.getNumberOfMedShipsServ().ToString();
+                firstPierLargeServ.Text = firstPier.getNumberOfLargeShipsServ().ToString();
+            }
+
+            if (numberOfPier == 1)
+            {
+                secondPierTotalServ.Text = secondPier.getNumberOfShipsServ().ToString();
+                secondPierSmallServ.Text = secondPier.getNumberOfSmallShipsServ().ToString();
+                secondPierMedServ.Text = secondPier.getNumberOfMedShipsServ().ToString();
+                secondPierLargeServ.Text = secondPier.getNumberOfLargeShipsServ().ToString();
+            }
+
+            if (numberOfPier == 2)
+            {
+                thirdPierTotalServ.Text = thirdPier.getNumberOfShipsServ().ToString();
+                thirdPierSmallServ.Text = thirdPier.getNumberOfSmallShipsServ().ToString();
+                thirdPierMedServ.Text = thirdPier.getNumberOfMedShipsServ().ToString();
+                thirdPierLargeServ.Text = thirdPier.getNumberOfLargeShipsServ().ToString();
+            }
+
+            if (numberOfPier == 3)
+            {
+                fourthPierTotalServ.Text = fourthPier.getNumberOfShipsServ().ToString();
+                fourthPierSmallServ.Text = fourthPier.getNumberOfSmallShipsServ().ToString();
+                fourthPierMedServ.Text = fourthPier.getNumberOfMedShipsServ().ToString();
+                fourthPierLargeServ.Text = fourthPier.getNumberOfLargeShipsServ().ToString();
+            }
+        }
+
         public void cleanPier(int pierNumber)
         {
             if (pierNumber == 0)
             {
                 firstPierServiceNow.Text = "";
+
             }
 
             if (pierNumber == 1)
@@ -230,6 +224,52 @@ namespace RiverPortApp.View
             }
         }
 
+        public void stopTime()
+        {
+            timer1.Enabled = false;
+        }
+
+        public void showMiddleAverage(double smallVesselMiddleTime,
+                                      double medVesselMiddleTime,
+                                      double largeVesselMiddleTime)
+        {
+            smallShipMiddleTime.Text = smallVesselMiddleTime.ToString();
+            medShipMiddleTime.Text = medVesselMiddleTime.ToString();
+            largeShipMiddleTime.Text = largeVesselMiddleTime.ToString();
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            timerButton.Enabled = true;
+            buttonStart.Enabled = false;
+
+            presenter.initFacade(Convert.ToInt32(smallShipsCount.Text),
+                                 Convert.ToInt32(mediumShipsCount.Text),
+                                 Convert.ToInt32(largeShipsCount.Text),
+                                 Convert.ToInt32(smallShipsServiceTime.Text),
+                                 Convert.ToInt32(mediumShipsServiceTime.Text),
+                                 Convert.ToInt32(largeShipsServiceTime.Text),
+                                 Convert.ToInt32(shipsTime.Text));
+
+            presenter.loadVesselStorage();
+
+
+            // Блокирует поля для ввода исходных данных
+            smallShipsCount.ReadOnly = true;
+            mediumShipsCount.ReadOnly = true;
+            largeShipsCount.ReadOnly = true;
+            smallShipsServiceTime.ReadOnly = true;
+            mediumShipsServiceTime.ReadOnly = true;
+            largeShipsServiceTime.ReadOnly = true;
+            shipsTime.ReadOnly = true;
+        }
+
+        /*public void showVesselStorage(string vesselStorage)
+        {
+            testLabel.Text = vesselStorage;
+        }*/
+
         // Реализация секундомера
         private void timer1_Tick_1(object sender, EventArgs e)
         {
@@ -237,15 +277,18 @@ namespace RiverPortApp.View
 
             presenter.loadTime();
 
+            // Добавляет суда в рейд и удаляет из вкладки "Обслуживаемые судна"
             presenter.loadVesselToRoadstead();
 
             // Добавление судов на причалы
             presenter.loadVesselToPiers();
 
+            // Удаление судов с причалов
             presenter.removeVesselFromPier();
 
-            // Удаление судов с причалов
-            // presenter.removeVesselFromPiers();
+            presenter.checkStopTime(Convert.ToInt32(smallShipsCount.Text),
+                                    Convert.ToInt32(mediumShipsCount.Text),
+                                    Convert.ToInt32(largeShipsCount.Text));
         }
 
         // Кнопки ускорения секундомера
@@ -306,39 +349,5 @@ namespace RiverPortApp.View
                 timerButton.Text = "Stop";
             }
         }
-
-        // Геттеры для входных данных
-        /*public string getSmallShipsCount()
-        {
-            return smallShipsCount.Text;
-        }
-
-        public string getMediumShipsCount()
-        {
-            return mediumShipsCount.Text;
-        }
-
-        public string getLargeShipsCount()
-        {
-            return largeShipsCount.Text;
-        }
-
-        public string getSmallShipsServiceTime()
-        {
-            return smallShipsServiceTime.Text;
-        }
-
-        public string getMedShipsServiceTime()
-        {
-            return mediumShipsServiceTime.Text;
-        }
-        public string getLargeShipsServiceTime()
-        {
-            return largeShipsServiceTime.Text;
-        }
-        public string getShipsTime()
-        {
-            return shipsTime.Text;
-        }*/
     }
 }

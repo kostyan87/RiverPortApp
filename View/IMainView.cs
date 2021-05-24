@@ -24,5 +24,13 @@ namespace RiverPortApp.View
         void removeVesselFromRoadstead(int id);
 
         void cleanPier(int pierNumber);
+
+        void stopTime();
+
+        void changePierData(Port port, int numberOfPier);
+
+        void showMiddleAverage(double smallVesselMiddleTime,
+                               double medVesselMiddleTime,
+                               double largeVesselMiddleTime);
     }
 }

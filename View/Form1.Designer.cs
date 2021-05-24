@@ -79,9 +79,6 @@ namespace RiverPortApp.View
             this.service_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.fourthPierLargeServ = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -131,9 +128,12 @@ namespace RiverPortApp.View
             this.serviceNowLabel = new System.Windows.Forms.Label();
             this.firstPierLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label33 = new System.Windows.Forms.Label();
-            this.testLabel = new System.Windows.Forms.Label();
+            this.largeShipMiddleTime = new System.Windows.Forms.Label();
+            this.medShipMiddleTime = new System.Windows.Forms.Label();
+            this.smallShipMiddleTime = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.dayLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label25 = new System.Windows.Forms.Label();
@@ -167,7 +167,7 @@ namespace RiverPortApp.View
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.firstPier.SuspendLayout();
-            this.tabPage5.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -177,13 +177,12 @@ namespace RiverPortApp.View
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1046, 602);
+            this.tabControl1.Size = new System.Drawing.Size(1308, 752);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -194,11 +193,11 @@ namespace RiverPortApp.View
             this.tabPage1.Controls.Add(this.smallShipsPanel);
             this.tabPage1.Controls.Add(this.largeShipsPanel);
             this.tabPage1.Controls.Add(this.mediumShipsPanel);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(1038, 569);
+            this.tabPage1.Size = new System.Drawing.Size(1300, 714);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Входные данные";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -206,9 +205,10 @@ namespace RiverPortApp.View
             // buttonStart
             // 
             this.buttonStart.Enabled = false;
-            this.buttonStart.Location = new System.Drawing.Point(387, 415);
+            this.buttonStart.Location = new System.Drawing.Point(484, 519);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(267, 41);
+            this.buttonStart.Size = new System.Drawing.Size(334, 51);
             this.buttonStart.TabIndex = 6;
             this.buttonStart.Text = "Начать моделирование";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -216,9 +216,10 @@ namespace RiverPortApp.View
             // 
             // shipsTime
             // 
-            this.shipsTime.Location = new System.Drawing.Point(557, 364);
+            this.shipsTime.Location = new System.Drawing.Point(696, 455);
+            this.shipsTime.Margin = new System.Windows.Forms.Padding(4);
             this.shipsTime.Name = "shipsTime";
-            this.shipsTime.Size = new System.Drawing.Size(125, 27);
+            this.shipsTime.Size = new System.Drawing.Size(155, 31);
             this.shipsTime.TabIndex = 5;
             this.shipsTime.TextChanged += new System.EventHandler(this.input_TextChanged);
             this.shipsTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.input_KeyPress);
@@ -226,9 +227,10 @@ namespace RiverPortApp.View
             // shipsTimeLabel
             // 
             this.shipsTimeLabel.AutoSize = true;
-            this.shipsTimeLabel.Location = new System.Drawing.Point(272, 364);
+            this.shipsTimeLabel.Location = new System.Drawing.Point(340, 455);
+            this.shipsTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.shipsTimeLabel.Name = "shipsTimeLabel";
-            this.shipsTimeLabel.Size = new System.Drawing.Size(265, 20);
+            this.shipsTimeLabel.Size = new System.Drawing.Size(316, 25);
             this.shipsTimeLabel.TabIndex = 4;
             this.shipsTimeLabel.Text = "Время, через которое приходят суда";
             // 
@@ -240,17 +242,18 @@ namespace RiverPortApp.View
             this.smallShipsPanel.Controls.Add(this.smallShipsCount);
             this.smallShipsPanel.Controls.Add(this.smallShipsCountLabel);
             this.smallShipsPanel.Controls.Add(this.smallShipsLabel);
-            this.smallShipsPanel.Location = new System.Drawing.Point(29, 107);
+            this.smallShipsPanel.Location = new System.Drawing.Point(36, 134);
             this.smallShipsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.smallShipsPanel.Name = "smallShipsPanel";
-            this.smallShipsPanel.Size = new System.Drawing.Size(298, 222);
+            this.smallShipsPanel.Size = new System.Drawing.Size(372, 278);
             this.smallShipsPanel.TabIndex = 3;
             // 
             // smallShipsServiceTime
             // 
-            this.smallShipsServiceTime.Location = new System.Drawing.Point(191, 145);
+            this.smallShipsServiceTime.Location = new System.Drawing.Point(239, 181);
+            this.smallShipsServiceTime.Margin = new System.Windows.Forms.Padding(4);
             this.smallShipsServiceTime.Name = "smallShipsServiceTime";
-            this.smallShipsServiceTime.Size = new System.Drawing.Size(80, 27);
+            this.smallShipsServiceTime.Size = new System.Drawing.Size(99, 31);
             this.smallShipsServiceTime.TabIndex = 5;
             this.smallShipsServiceTime.TextChanged += new System.EventHandler(this.input_TextChanged);
             this.smallShipsServiceTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.input_KeyPress);
@@ -258,17 +261,19 @@ namespace RiverPortApp.View
             // smalShipsServiceTimeLabel
             // 
             this.smalShipsServiceTimeLabel.AutoSize = true;
-            this.smalShipsServiceTimeLabel.Location = new System.Drawing.Point(21, 148);
+            this.smalShipsServiceTimeLabel.Location = new System.Drawing.Point(26, 185);
+            this.smalShipsServiceTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.smalShipsServiceTimeLabel.Name = "smalShipsServiceTimeLabel";
-            this.smalShipsServiceTimeLabel.Size = new System.Drawing.Size(160, 20);
+            this.smalShipsServiceTimeLabel.Size = new System.Drawing.Size(187, 25);
             this.smalShipsServiceTimeLabel.TabIndex = 4;
             this.smalShipsServiceTimeLabel.Text = "Время обслуживания";
             // 
             // smallShipsCount
             // 
-            this.smallShipsCount.Location = new System.Drawing.Point(191, 85);
+            this.smallShipsCount.Location = new System.Drawing.Point(239, 106);
+            this.smallShipsCount.Margin = new System.Windows.Forms.Padding(4);
             this.smallShipsCount.Name = "smallShipsCount";
-            this.smallShipsCount.Size = new System.Drawing.Size(80, 27);
+            this.smallShipsCount.Size = new System.Drawing.Size(99, 31);
             this.smallShipsCount.TabIndex = 3;
             this.smallShipsCount.TextChanged += new System.EventHandler(this.input_TextChanged);
             this.smallShipsCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.input_KeyPress);
@@ -276,18 +281,20 @@ namespace RiverPortApp.View
             // smallShipsCountLabel
             // 
             this.smallShipsCountLabel.AutoSize = true;
-            this.smallShipsCountLabel.Location = new System.Drawing.Point(57, 88);
+            this.smallShipsCountLabel.Location = new System.Drawing.Point(71, 110);
+            this.smallShipsCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.smallShipsCountLabel.Name = "smallShipsCountLabel";
-            this.smallShipsCountLabel.Size = new System.Drawing.Size(90, 20);
+            this.smallShipsCountLabel.Size = new System.Drawing.Size(107, 25);
             this.smallShipsCountLabel.TabIndex = 2;
             this.smallShipsCountLabel.Text = "Количество";
             // 
             // smallShipsLabel
             // 
             this.smallShipsLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.smallShipsLabel.Location = new System.Drawing.Point(46, 15);
+            this.smallShipsLabel.Location = new System.Drawing.Point(58, 19);
+            this.smallShipsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.smallShipsLabel.Name = "smallShipsLabel";
-            this.smallShipsLabel.Size = new System.Drawing.Size(193, 35);
+            this.smallShipsLabel.Size = new System.Drawing.Size(241, 44);
             this.smallShipsLabel.TabIndex = 1;
             this.smallShipsLabel.Text = "Небольшие суда";
             this.smallShipsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -300,17 +307,18 @@ namespace RiverPortApp.View
             this.largeShipsPanel.Controls.Add(this.largeShipsCount);
             this.largeShipsPanel.Controls.Add(this.largeShipsCountLabel);
             this.largeShipsPanel.Controls.Add(this.largeShipsLabel);
-            this.largeShipsPanel.Location = new System.Drawing.Point(715, 107);
+            this.largeShipsPanel.Location = new System.Drawing.Point(894, 134);
             this.largeShipsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.largeShipsPanel.Name = "largeShipsPanel";
-            this.largeShipsPanel.Size = new System.Drawing.Size(298, 222);
+            this.largeShipsPanel.Size = new System.Drawing.Size(372, 278);
             this.largeShipsPanel.TabIndex = 2;
             // 
             // largeShipsServiceTime
             // 
-            this.largeShipsServiceTime.Location = new System.Drawing.Point(191, 141);
+            this.largeShipsServiceTime.Location = new System.Drawing.Point(239, 176);
+            this.largeShipsServiceTime.Margin = new System.Windows.Forms.Padding(4);
             this.largeShipsServiceTime.Name = "largeShipsServiceTime";
-            this.largeShipsServiceTime.Size = new System.Drawing.Size(80, 27);
+            this.largeShipsServiceTime.Size = new System.Drawing.Size(99, 31);
             this.largeShipsServiceTime.TabIndex = 5;
             this.largeShipsServiceTime.TextChanged += new System.EventHandler(this.input_TextChanged);
             this.largeShipsServiceTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.input_KeyPress);
@@ -318,17 +326,19 @@ namespace RiverPortApp.View
             // largeShipsServiceTimeLable
             // 
             this.largeShipsServiceTimeLable.AutoSize = true;
-            this.largeShipsServiceTimeLable.Location = new System.Drawing.Point(21, 148);
+            this.largeShipsServiceTimeLable.Location = new System.Drawing.Point(26, 185);
+            this.largeShipsServiceTimeLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.largeShipsServiceTimeLable.Name = "largeShipsServiceTimeLable";
-            this.largeShipsServiceTimeLable.Size = new System.Drawing.Size(160, 20);
+            this.largeShipsServiceTimeLable.Size = new System.Drawing.Size(187, 25);
             this.largeShipsServiceTimeLable.TabIndex = 4;
             this.largeShipsServiceTimeLable.Text = "Время обслуживания";
             // 
             // largeShipsCount
             // 
-            this.largeShipsCount.Location = new System.Drawing.Point(191, 85);
+            this.largeShipsCount.Location = new System.Drawing.Point(239, 106);
+            this.largeShipsCount.Margin = new System.Windows.Forms.Padding(4);
             this.largeShipsCount.Name = "largeShipsCount";
-            this.largeShipsCount.Size = new System.Drawing.Size(80, 27);
+            this.largeShipsCount.Size = new System.Drawing.Size(99, 31);
             this.largeShipsCount.TabIndex = 3;
             this.largeShipsCount.TextChanged += new System.EventHandler(this.input_TextChanged);
             this.largeShipsCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.input_KeyPress);
@@ -336,18 +346,20 @@ namespace RiverPortApp.View
             // largeShipsCountLabel
             // 
             this.largeShipsCountLabel.AutoSize = true;
-            this.largeShipsCountLabel.Location = new System.Drawing.Point(68, 88);
+            this.largeShipsCountLabel.Location = new System.Drawing.Point(85, 110);
+            this.largeShipsCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.largeShipsCountLabel.Name = "largeShipsCountLabel";
-            this.largeShipsCountLabel.Size = new System.Drawing.Size(90, 20);
+            this.largeShipsCountLabel.Size = new System.Drawing.Size(107, 25);
             this.largeShipsCountLabel.TabIndex = 2;
             this.largeShipsCountLabel.Text = "Количество";
             // 
             // largeShipsLabel
             // 
             this.largeShipsLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.largeShipsLabel.Location = new System.Drawing.Point(53, 15);
+            this.largeShipsLabel.Location = new System.Drawing.Point(66, 19);
+            this.largeShipsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.largeShipsLabel.Name = "largeShipsLabel";
-            this.largeShipsLabel.Size = new System.Drawing.Size(193, 35);
+            this.largeShipsLabel.Size = new System.Drawing.Size(241, 44);
             this.largeShipsLabel.TabIndex = 1;
             this.largeShipsLabel.Text = "Крупные суда";
             this.largeShipsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -360,17 +372,18 @@ namespace RiverPortApp.View
             this.mediumShipsPanel.Controls.Add(this.mediumShipsCount);
             this.mediumShipsPanel.Controls.Add(this.mediumShipsCountLabel);
             this.mediumShipsPanel.Controls.Add(this.mediumShipsLabel);
-            this.mediumShipsPanel.Location = new System.Drawing.Point(371, 107);
+            this.mediumShipsPanel.Location = new System.Drawing.Point(464, 134);
             this.mediumShipsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mediumShipsPanel.Name = "mediumShipsPanel";
-            this.mediumShipsPanel.Size = new System.Drawing.Size(298, 222);
+            this.mediumShipsPanel.Size = new System.Drawing.Size(372, 278);
             this.mediumShipsPanel.TabIndex = 1;
             // 
             // mediumShipsServiceTime
             // 
-            this.mediumShipsServiceTime.Location = new System.Drawing.Point(192, 145);
+            this.mediumShipsServiceTime.Location = new System.Drawing.Point(240, 181);
+            this.mediumShipsServiceTime.Margin = new System.Windows.Forms.Padding(4);
             this.mediumShipsServiceTime.Name = "mediumShipsServiceTime";
-            this.mediumShipsServiceTime.Size = new System.Drawing.Size(80, 27);
+            this.mediumShipsServiceTime.Size = new System.Drawing.Size(99, 31);
             this.mediumShipsServiceTime.TabIndex = 5;
             this.mediumShipsServiceTime.TextChanged += new System.EventHandler(this.input_TextChanged);
             this.mediumShipsServiceTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.input_KeyPress);
@@ -378,17 +391,19 @@ namespace RiverPortApp.View
             // mediumShipsServiceTimeLabel
             // 
             this.mediumShipsServiceTimeLabel.AutoSize = true;
-            this.mediumShipsServiceTimeLabel.Location = new System.Drawing.Point(21, 148);
+            this.mediumShipsServiceTimeLabel.Location = new System.Drawing.Point(26, 185);
+            this.mediumShipsServiceTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mediumShipsServiceTimeLabel.Name = "mediumShipsServiceTimeLabel";
-            this.mediumShipsServiceTimeLabel.Size = new System.Drawing.Size(160, 20);
+            this.mediumShipsServiceTimeLabel.Size = new System.Drawing.Size(187, 25);
             this.mediumShipsServiceTimeLabel.TabIndex = 4;
             this.mediumShipsServiceTimeLabel.Text = "Время обслуживания";
             // 
             // mediumShipsCount
             // 
-            this.mediumShipsCount.Location = new System.Drawing.Point(192, 85);
+            this.mediumShipsCount.Location = new System.Drawing.Point(240, 106);
+            this.mediumShipsCount.Margin = new System.Windows.Forms.Padding(4);
             this.mediumShipsCount.Name = "mediumShipsCount";
-            this.mediumShipsCount.Size = new System.Drawing.Size(80, 27);
+            this.mediumShipsCount.Size = new System.Drawing.Size(99, 31);
             this.mediumShipsCount.TabIndex = 3;
             this.mediumShipsCount.TextChanged += new System.EventHandler(this.input_TextChanged);
             this.mediumShipsCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.input_KeyPress);
@@ -396,18 +411,20 @@ namespace RiverPortApp.View
             // mediumShipsCountLabel
             // 
             this.mediumShipsCountLabel.AutoSize = true;
-            this.mediumShipsCountLabel.Location = new System.Drawing.Point(62, 88);
+            this.mediumShipsCountLabel.Location = new System.Drawing.Point(78, 110);
+            this.mediumShipsCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mediumShipsCountLabel.Name = "mediumShipsCountLabel";
-            this.mediumShipsCountLabel.Size = new System.Drawing.Size(90, 20);
+            this.mediumShipsCountLabel.Size = new System.Drawing.Size(107, 25);
             this.mediumShipsCountLabel.TabIndex = 2;
             this.mediumShipsCountLabel.Text = "Количество";
             // 
             // mediumShipsLabel
             // 
             this.mediumShipsLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mediumShipsLabel.Location = new System.Drawing.Point(50, 15);
+            this.mediumShipsLabel.Location = new System.Drawing.Point(62, 19);
+            this.mediumShipsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mediumShipsLabel.Name = "mediumShipsLabel";
-            this.mediumShipsLabel.Size = new System.Drawing.Size(193, 35);
+            this.mediumShipsLabel.Size = new System.Drawing.Size(241, 44);
             this.mediumShipsLabel.TabIndex = 1;
             this.mediumShipsLabel.Text = "Средние суда";
             this.mediumShipsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -420,9 +437,10 @@ namespace RiverPortApp.View
             this.tabPage6.Controls.Add(this.storageMedShips);
             this.tabPage6.Controls.Add(this.label31);
             this.tabPage6.Controls.Add(this.storageSmallShips);
-            this.tabPage6.Location = new System.Drawing.Point(4, 29);
+            this.tabPage6.Location = new System.Drawing.Point(4, 34);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1038, 569);
+            this.tabPage6.Size = new System.Drawing.Size(1300, 714);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Обслуживаемые судна";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -430,9 +448,10 @@ namespace RiverPortApp.View
             // vfdfvd
             // 
             this.vfdfvd.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vfdfvd.Location = new System.Drawing.Point(760, 19);
+            this.vfdfvd.Location = new System.Drawing.Point(950, 24);
+            this.vfdfvd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vfdfvd.Name = "vfdfvd";
-            this.vfdfvd.Size = new System.Drawing.Size(193, 35);
+            this.vfdfvd.Size = new System.Drawing.Size(241, 44);
             this.vfdfvd.TabIndex = 6;
             this.vfdfvd.Text = "Большие суда";
             this.vfdfvd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -447,12 +466,14 @@ namespace RiverPortApp.View
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
-            this.storageBigShips.Location = new System.Drawing.Point(699, 68);
+            this.storageBigShips.Location = new System.Drawing.Point(874, 85);
+            this.storageBigShips.Margin = new System.Windows.Forms.Padding(4);
             this.storageBigShips.Name = "storageBigShips";
             this.storageBigShips.ReadOnly = true;
+            this.storageBigShips.RowHeadersVisible = false;
             this.storageBigShips.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.storageBigShips.RowTemplate.Height = 29;
-            this.storageBigShips.Size = new System.Drawing.Size(324, 474);
+            this.storageBigShips.Size = new System.Drawing.Size(405, 592);
             this.storageBigShips.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn8
@@ -461,7 +482,7 @@ namespace RiverPortApp.View
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 60;
+            this.dataGridViewTextBoxColumn8.Width = 150;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -490,9 +511,10 @@ namespace RiverPortApp.View
             // label32
             // 
             this.label32.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label32.Location = new System.Drawing.Point(417, 19);
+            this.label32.Location = new System.Drawing.Point(521, 24);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(193, 35);
+            this.label32.Size = new System.Drawing.Size(241, 44);
             this.label32.TabIndex = 4;
             this.label32.Text = "Средние суда";
             this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -507,12 +529,14 @@ namespace RiverPortApp.View
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.storageMedShips.Location = new System.Drawing.Point(359, 68);
+            this.storageMedShips.Location = new System.Drawing.Point(449, 85);
+            this.storageMedShips.Margin = new System.Windows.Forms.Padding(4);
             this.storageMedShips.Name = "storageMedShips";
             this.storageMedShips.ReadOnly = true;
+            this.storageMedShips.RowHeadersVisible = false;
             this.storageMedShips.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.storageMedShips.RowTemplate.Height = 29;
-            this.storageMedShips.Size = new System.Drawing.Size(324, 474);
+            this.storageMedShips.Size = new System.Drawing.Size(405, 592);
             this.storageMedShips.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn4
@@ -521,7 +545,7 @@ namespace RiverPortApp.View
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 60;
+            this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -550,9 +574,10 @@ namespace RiverPortApp.View
             // label31
             // 
             this.label31.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label31.Location = new System.Drawing.Point(69, 19);
+            this.label31.Location = new System.Drawing.Point(86, 24);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(193, 35);
+            this.label31.Size = new System.Drawing.Size(241, 44);
             this.label31.TabIndex = 2;
             this.label31.Text = "Небольшие суда";
             this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -567,12 +592,14 @@ namespace RiverPortApp.View
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.ships_time});
-            this.storageSmallShips.Location = new System.Drawing.Point(17, 68);
+            this.storageSmallShips.Location = new System.Drawing.Point(21, 85);
+            this.storageSmallShips.Margin = new System.Windows.Forms.Padding(4);
             this.storageSmallShips.Name = "storageSmallShips";
             this.storageSmallShips.ReadOnly = true;
+            this.storageSmallShips.RowHeadersVisible = false;
             this.storageSmallShips.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.storageSmallShips.RowTemplate.Height = 29;
-            this.storageSmallShips.Size = new System.Drawing.Size(324, 474);
+            this.storageSmallShips.Size = new System.Drawing.Size(405, 592);
             this.storageSmallShips.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -581,7 +608,7 @@ namespace RiverPortApp.View
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 60;
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -610,10 +637,10 @@ namespace RiverPortApp.View
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.roadsteadData);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1038, 569);
+            this.tabPage3.Size = new System.Drawing.Size(1300, 714);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Рейд";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -628,12 +655,14 @@ namespace RiverPortApp.View
             this.size,
             this.service_time,
             this.dataGridViewTextBoxColumn12});
-            this.roadsteadData.Location = new System.Drawing.Point(31, 23);
+            this.roadsteadData.Location = new System.Drawing.Point(39, 29);
+            this.roadsteadData.Margin = new System.Windows.Forms.Padding(4);
             this.roadsteadData.Name = "roadsteadData";
             this.roadsteadData.ReadOnly = true;
+            this.roadsteadData.RowHeadersVisible = false;
             this.roadsteadData.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.roadsteadData.RowTemplate.Height = 29;
-            this.roadsteadData.Size = new System.Drawing.Size(524, 538);
+            this.roadsteadData.Size = new System.Drawing.Size(655, 672);
             this.roadsteadData.TabIndex = 0;
             // 
             // id
@@ -670,44 +699,17 @@ namespace RiverPortApp.View
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.textBox1);
-            this.tabPage4.Controls.Add(this.label24);
-            this.tabPage4.Controls.Add(this.label23);
             this.tabPage4.Controls.Add(this.panel3);
             this.tabPage4.Controls.Add(this.panel2);
             this.tabPage4.Controls.Add(this.panel1);
             this.tabPage4.Controls.Add(this.firstPier);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1038, 569);
+            this.tabPage4.Size = new System.Drawing.Size(1300, 714);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Причалы";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(558, 493);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 27);
-            this.textBox1.TabIndex = 14;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(332, 493);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(208, 20);
-            this.label24.TabIndex = 13;
-            this.label24.Text = "Следующее судно в очереди";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(394, 493);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(0, 20);
-            this.label23.TabIndex = 12;
             // 
             // panel3
             // 
@@ -723,88 +725,104 @@ namespace RiverPortApp.View
             this.panel3.Controls.Add(this.fourthPierServiceNow);
             this.panel3.Controls.Add(this.label21);
             this.panel3.Controls.Add(this.label22);
-            this.panel3.Location = new System.Drawing.Point(779, 110);
+            this.panel3.Location = new System.Drawing.Point(974, 138);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(247, 340);
+            this.panel3.Size = new System.Drawing.Size(309, 425);
             this.panel3.TabIndex = 11;
             // 
             // fourthPierLargeServ
             // 
-            this.fourthPierLargeServ.Location = new System.Drawing.Point(61, 296);
+            this.fourthPierLargeServ.Location = new System.Drawing.Point(76, 370);
+            this.fourthPierLargeServ.Margin = new System.Windows.Forms.Padding(4);
             this.fourthPierLargeServ.Name = "fourthPierLargeServ";
-            this.fourthPierLargeServ.Size = new System.Drawing.Size(125, 27);
+            this.fourthPierLargeServ.ReadOnly = true;
+            this.fourthPierLargeServ.Size = new System.Drawing.Size(155, 31);
             this.fourthPierLargeServ.TabIndex = 10;
             // 
             // label17
             // 
-            this.label17.Location = new System.Drawing.Point(53, 276);
+            this.label17.Location = new System.Drawing.Point(66, 345);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(140, 38);
+            this.label17.Size = new System.Drawing.Size(175, 48);
             this.label17.TabIndex = 9;
             this.label17.Text = "Крупные";
             this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // fourthPierMedServ
             // 
-            this.fourthPierMedServ.Location = new System.Drawing.Point(61, 246);
+            this.fourthPierMedServ.Location = new System.Drawing.Point(76, 308);
+            this.fourthPierMedServ.Margin = new System.Windows.Forms.Padding(4);
             this.fourthPierMedServ.Name = "fourthPierMedServ";
-            this.fourthPierMedServ.Size = new System.Drawing.Size(125, 27);
+            this.fourthPierMedServ.ReadOnly = true;
+            this.fourthPierMedServ.Size = new System.Drawing.Size(155, 31);
             this.fourthPierMedServ.TabIndex = 8;
             // 
             // label18
             // 
-            this.label18.Location = new System.Drawing.Point(53, 226);
+            this.label18.Location = new System.Drawing.Point(66, 282);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(140, 38);
+            this.label18.Size = new System.Drawing.Size(175, 48);
             this.label18.TabIndex = 7;
             this.label18.Text = "Средние";
             this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // fourthPierSmallServ
             // 
-            this.fourthPierSmallServ.Location = new System.Drawing.Point(61, 199);
+            this.fourthPierSmallServ.Location = new System.Drawing.Point(76, 249);
+            this.fourthPierSmallServ.Margin = new System.Windows.Forms.Padding(4);
             this.fourthPierSmallServ.Name = "fourthPierSmallServ";
-            this.fourthPierSmallServ.Size = new System.Drawing.Size(125, 27);
+            this.fourthPierSmallServ.ReadOnly = true;
+            this.fourthPierSmallServ.Size = new System.Drawing.Size(155, 31);
             this.fourthPierSmallServ.TabIndex = 6;
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(53, 179);
+            this.label19.Location = new System.Drawing.Point(66, 224);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(140, 38);
+            this.label19.Size = new System.Drawing.Size(175, 48);
             this.label19.TabIndex = 5;
             this.label19.Text = "Небольшие";
             this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // fourthPierTotalServ
             // 
-            this.fourthPierTotalServ.Location = new System.Drawing.Point(61, 146);
+            this.fourthPierTotalServ.Location = new System.Drawing.Point(76, 182);
+            this.fourthPierTotalServ.Margin = new System.Windows.Forms.Padding(4);
             this.fourthPierTotalServ.Name = "fourthPierTotalServ";
-            this.fourthPierTotalServ.Size = new System.Drawing.Size(125, 27);
+            this.fourthPierTotalServ.ReadOnly = true;
+            this.fourthPierTotalServ.Size = new System.Drawing.Size(155, 31);
             this.fourthPierTotalServ.TabIndex = 4;
             // 
             // label20
             // 
-            this.label20.Location = new System.Drawing.Point(53, 126);
+            this.label20.Location = new System.Drawing.Point(66, 158);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(140, 38);
+            this.label20.Size = new System.Drawing.Size(175, 48);
             this.label20.TabIndex = 3;
             this.label20.Text = "Всего обслужено";
             this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // fourthPierServiceNow
             // 
-            this.fourthPierServiceNow.Location = new System.Drawing.Point(18, 96);
+            this.fourthPierServiceNow.Location = new System.Drawing.Point(22, 120);
+            this.fourthPierServiceNow.Margin = new System.Windows.Forms.Padding(4);
             this.fourthPierServiceNow.Name = "fourthPierServiceNow";
-            this.fourthPierServiceNow.Size = new System.Drawing.Size(214, 27);
+            this.fourthPierServiceNow.ReadOnly = true;
+            this.fourthPierServiceNow.Size = new System.Drawing.Size(266, 31);
             this.fourthPierServiceNow.TabIndex = 2;
             this.fourthPierServiceNow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
             // 
-            this.label21.Location = new System.Drawing.Point(53, 50);
+            this.label21.Location = new System.Drawing.Point(66, 62);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(133, 43);
+            this.label21.Size = new System.Drawing.Size(166, 54);
             this.label21.TabIndex = 1;
             this.label21.Text = "Сейчас\r\nобслуживается";
             this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -812,9 +830,10 @@ namespace RiverPortApp.View
             // label22
             // 
             this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(18, 10);
+            this.label22.Location = new System.Drawing.Point(22, 12);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(214, 25);
+            this.label22.Size = new System.Drawing.Size(268, 31);
             this.label22.TabIndex = 0;
             this.label22.Text = "4 причал";
             this.label22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -833,88 +852,103 @@ namespace RiverPortApp.View
             this.panel2.Controls.Add(this.thirdPierServiceNow);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Location = new System.Drawing.Point(526, 111);
+            this.panel2.Location = new System.Drawing.Point(658, 139);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 340);
+            this.panel2.Size = new System.Drawing.Size(309, 425);
             this.panel2.TabIndex = 11;
             // 
             // thirdPierLargeServ
             // 
-            this.thirdPierLargeServ.Location = new System.Drawing.Point(62, 295);
+            this.thirdPierLargeServ.Location = new System.Drawing.Point(78, 369);
+            this.thirdPierLargeServ.Margin = new System.Windows.Forms.Padding(4);
             this.thirdPierLargeServ.Name = "thirdPierLargeServ";
-            this.thirdPierLargeServ.Size = new System.Drawing.Size(125, 27);
+            this.thirdPierLargeServ.ReadOnly = true;
+            this.thirdPierLargeServ.Size = new System.Drawing.Size(155, 31);
             this.thirdPierLargeServ.TabIndex = 10;
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(54, 275);
+            this.label11.Location = new System.Drawing.Point(68, 344);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(140, 38);
+            this.label11.Size = new System.Drawing.Size(175, 48);
             this.label11.TabIndex = 9;
             this.label11.Text = "Крупные";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // thirdPierMedServ
             // 
-            this.thirdPierMedServ.Location = new System.Drawing.Point(62, 245);
+            this.thirdPierMedServ.Location = new System.Drawing.Point(78, 306);
+            this.thirdPierMedServ.Margin = new System.Windows.Forms.Padding(4);
             this.thirdPierMedServ.Name = "thirdPierMedServ";
-            this.thirdPierMedServ.Size = new System.Drawing.Size(125, 27);
+            this.thirdPierMedServ.Size = new System.Drawing.Size(155, 31);
             this.thirdPierMedServ.TabIndex = 8;
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(54, 225);
+            this.label12.Location = new System.Drawing.Point(68, 281);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(140, 38);
+            this.label12.Size = new System.Drawing.Size(175, 48);
             this.label12.TabIndex = 7;
             this.label12.Text = "Средние";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // thirdPierSmallServ
             // 
-            this.thirdPierSmallServ.Location = new System.Drawing.Point(62, 198);
+            this.thirdPierSmallServ.Location = new System.Drawing.Point(78, 248);
+            this.thirdPierSmallServ.Margin = new System.Windows.Forms.Padding(4);
             this.thirdPierSmallServ.Name = "thirdPierSmallServ";
-            this.thirdPierSmallServ.Size = new System.Drawing.Size(125, 27);
+            this.thirdPierSmallServ.ReadOnly = true;
+            this.thirdPierSmallServ.Size = new System.Drawing.Size(155, 31);
             this.thirdPierSmallServ.TabIndex = 6;
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(54, 178);
+            this.label13.Location = new System.Drawing.Point(68, 222);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(140, 38);
+            this.label13.Size = new System.Drawing.Size(175, 48);
             this.label13.TabIndex = 5;
             this.label13.Text = "Небольшие";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // thirdPierTotalServ
             // 
-            this.thirdPierTotalServ.Location = new System.Drawing.Point(62, 145);
+            this.thirdPierTotalServ.Location = new System.Drawing.Point(78, 181);
+            this.thirdPierTotalServ.Margin = new System.Windows.Forms.Padding(4);
             this.thirdPierTotalServ.Name = "thirdPierTotalServ";
-            this.thirdPierTotalServ.Size = new System.Drawing.Size(125, 27);
+            this.thirdPierTotalServ.ReadOnly = true;
+            this.thirdPierTotalServ.Size = new System.Drawing.Size(155, 31);
             this.thirdPierTotalServ.TabIndex = 4;
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(54, 125);
+            this.label14.Location = new System.Drawing.Point(68, 156);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(140, 38);
+            this.label14.Size = new System.Drawing.Size(175, 48);
             this.label14.TabIndex = 3;
             this.label14.Text = "Всего обслужено";
             this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // thirdPierServiceNow
             // 
-            this.thirdPierServiceNow.Location = new System.Drawing.Point(18, 95);
+            this.thirdPierServiceNow.Location = new System.Drawing.Point(22, 119);
+            this.thirdPierServiceNow.Margin = new System.Windows.Forms.Padding(4);
             this.thirdPierServiceNow.Name = "thirdPierServiceNow";
-            this.thirdPierServiceNow.Size = new System.Drawing.Size(213, 27);
+            this.thirdPierServiceNow.ReadOnly = true;
+            this.thirdPierServiceNow.Size = new System.Drawing.Size(265, 31);
             this.thirdPierServiceNow.TabIndex = 2;
             this.thirdPierServiceNow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(54, 49);
+            this.label15.Location = new System.Drawing.Point(68, 61);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(133, 43);
+            this.label15.Size = new System.Drawing.Size(166, 54);
             this.label15.TabIndex = 1;
             this.label15.Text = "Сейчас\r\nобслуживается";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -922,9 +956,10 @@ namespace RiverPortApp.View
             // label16
             // 
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(18, 10);
+            this.label16.Location = new System.Drawing.Point(22, 12);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(213, 25);
+            this.label16.Size = new System.Drawing.Size(266, 31);
             this.label16.TabIndex = 0;
             this.label16.Text = "3 причал";
             this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -943,88 +978,104 @@ namespace RiverPortApp.View
             this.panel1.Controls.Add(this.secondPierServiceNow);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(273, 110);
+            this.panel1.Location = new System.Drawing.Point(341, 138);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 340);
+            this.panel1.Size = new System.Drawing.Size(309, 425);
             this.panel1.TabIndex = 1;
             // 
             // secondPierLargeServ
             // 
-            this.secondPierLargeServ.Location = new System.Drawing.Point(52, 296);
+            this.secondPierLargeServ.Location = new System.Drawing.Point(65, 370);
+            this.secondPierLargeServ.Margin = new System.Windows.Forms.Padding(4);
             this.secondPierLargeServ.Name = "secondPierLargeServ";
-            this.secondPierLargeServ.Size = new System.Drawing.Size(125, 27);
+            this.secondPierLargeServ.ReadOnly = true;
+            this.secondPierLargeServ.Size = new System.Drawing.Size(155, 31);
             this.secondPierLargeServ.TabIndex = 10;
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(44, 276);
+            this.label5.Location = new System.Drawing.Point(55, 345);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 38);
+            this.label5.Size = new System.Drawing.Size(175, 48);
             this.label5.TabIndex = 9;
             this.label5.Text = "Крупные";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // secondPierMedServ
             // 
-            this.secondPierMedServ.Location = new System.Drawing.Point(52, 246);
+            this.secondPierMedServ.Location = new System.Drawing.Point(65, 308);
+            this.secondPierMedServ.Margin = new System.Windows.Forms.Padding(4);
             this.secondPierMedServ.Name = "secondPierMedServ";
-            this.secondPierMedServ.Size = new System.Drawing.Size(125, 27);
+            this.secondPierMedServ.ReadOnly = true;
+            this.secondPierMedServ.Size = new System.Drawing.Size(155, 31);
             this.secondPierMedServ.TabIndex = 8;
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(44, 226);
+            this.label6.Location = new System.Drawing.Point(55, 282);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 38);
+            this.label6.Size = new System.Drawing.Size(175, 48);
             this.label6.TabIndex = 7;
             this.label6.Text = "Средние";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // secondPierSmallServ
             // 
-            this.secondPierSmallServ.Location = new System.Drawing.Point(52, 199);
+            this.secondPierSmallServ.Location = new System.Drawing.Point(65, 249);
+            this.secondPierSmallServ.Margin = new System.Windows.Forms.Padding(4);
             this.secondPierSmallServ.Name = "secondPierSmallServ";
-            this.secondPierSmallServ.Size = new System.Drawing.Size(125, 27);
+            this.secondPierSmallServ.ReadOnly = true;
+            this.secondPierSmallServ.Size = new System.Drawing.Size(155, 31);
             this.secondPierSmallServ.TabIndex = 6;
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(44, 179);
+            this.label7.Location = new System.Drawing.Point(55, 224);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 38);
+            this.label7.Size = new System.Drawing.Size(175, 48);
             this.label7.TabIndex = 5;
             this.label7.Text = "Небольшие";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // secondPierTotalServ
             // 
-            this.secondPierTotalServ.Location = new System.Drawing.Point(52, 146);
+            this.secondPierTotalServ.Location = new System.Drawing.Point(65, 182);
+            this.secondPierTotalServ.Margin = new System.Windows.Forms.Padding(4);
             this.secondPierTotalServ.Name = "secondPierTotalServ";
-            this.secondPierTotalServ.Size = new System.Drawing.Size(125, 27);
+            this.secondPierTotalServ.ReadOnly = true;
+            this.secondPierTotalServ.Size = new System.Drawing.Size(155, 31);
             this.secondPierTotalServ.TabIndex = 4;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(44, 126);
+            this.label8.Location = new System.Drawing.Point(55, 158);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 38);
+            this.label8.Size = new System.Drawing.Size(175, 48);
             this.label8.TabIndex = 3;
             this.label8.Text = "Всего обслужено";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // secondPierServiceNow
             // 
-            this.secondPierServiceNow.Location = new System.Drawing.Point(18, 96);
+            this.secondPierServiceNow.Location = new System.Drawing.Point(22, 120);
+            this.secondPierServiceNow.Margin = new System.Windows.Forms.Padding(4);
             this.secondPierServiceNow.Name = "secondPierServiceNow";
-            this.secondPierServiceNow.Size = new System.Drawing.Size(210, 27);
+            this.secondPierServiceNow.ReadOnly = true;
+            this.secondPierServiceNow.Size = new System.Drawing.Size(262, 31);
             this.secondPierServiceNow.TabIndex = 2;
             this.secondPierServiceNow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(44, 50);
+            this.label9.Location = new System.Drawing.Point(55, 62);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 43);
+            this.label9.Size = new System.Drawing.Size(166, 54);
             this.label9.TabIndex = 1;
             this.label9.Text = "Сейчас\r\nобслуживается";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1032,9 +1083,10 @@ namespace RiverPortApp.View
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(18, 10);
+            this.label10.Location = new System.Drawing.Point(22, 12);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(210, 25);
+            this.label10.Size = new System.Drawing.Size(262, 31);
             this.label10.TabIndex = 0;
             this.label10.Text = "2 причал";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1053,88 +1105,104 @@ namespace RiverPortApp.View
             this.firstPier.Controls.Add(this.firstPierServiceNow);
             this.firstPier.Controls.Add(this.serviceNowLabel);
             this.firstPier.Controls.Add(this.firstPierLabel);
-            this.firstPier.Location = new System.Drawing.Point(20, 110);
+            this.firstPier.Location = new System.Drawing.Point(25, 138);
+            this.firstPier.Margin = new System.Windows.Forms.Padding(4);
             this.firstPier.Name = "firstPier";
-            this.firstPier.Size = new System.Drawing.Size(247, 340);
+            this.firstPier.Size = new System.Drawing.Size(309, 425);
             this.firstPier.TabIndex = 0;
             // 
             // firstPierLargeServ
             // 
-            this.firstPierLargeServ.Location = new System.Drawing.Point(57, 296);
+            this.firstPierLargeServ.Location = new System.Drawing.Point(71, 370);
+            this.firstPierLargeServ.Margin = new System.Windows.Forms.Padding(4);
             this.firstPierLargeServ.Name = "firstPierLargeServ";
-            this.firstPierLargeServ.Size = new System.Drawing.Size(125, 27);
+            this.firstPierLargeServ.ReadOnly = true;
+            this.firstPierLargeServ.Size = new System.Drawing.Size(155, 31);
             this.firstPierLargeServ.TabIndex = 10;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(49, 276);
+            this.label4.Location = new System.Drawing.Point(61, 345);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 38);
+            this.label4.Size = new System.Drawing.Size(175, 48);
             this.label4.TabIndex = 9;
             this.label4.Text = "Крупные";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // firstPierMedServ
             // 
-            this.firstPierMedServ.Location = new System.Drawing.Point(57, 246);
+            this.firstPierMedServ.Location = new System.Drawing.Point(71, 308);
+            this.firstPierMedServ.Margin = new System.Windows.Forms.Padding(4);
             this.firstPierMedServ.Name = "firstPierMedServ";
-            this.firstPierMedServ.Size = new System.Drawing.Size(125, 27);
+            this.firstPierMedServ.ReadOnly = true;
+            this.firstPierMedServ.Size = new System.Drawing.Size(155, 31);
             this.firstPierMedServ.TabIndex = 8;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(49, 226);
+            this.label3.Location = new System.Drawing.Point(61, 282);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 38);
+            this.label3.Size = new System.Drawing.Size(175, 48);
             this.label3.TabIndex = 7;
             this.label3.Text = "Средние";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // firstPierSmallServ
             // 
-            this.firstPierSmallServ.Location = new System.Drawing.Point(57, 199);
+            this.firstPierSmallServ.Location = new System.Drawing.Point(71, 249);
+            this.firstPierSmallServ.Margin = new System.Windows.Forms.Padding(4);
             this.firstPierSmallServ.Name = "firstPierSmallServ";
-            this.firstPierSmallServ.Size = new System.Drawing.Size(125, 27);
+            this.firstPierSmallServ.ReadOnly = true;
+            this.firstPierSmallServ.Size = new System.Drawing.Size(155, 31);
             this.firstPierSmallServ.TabIndex = 6;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(49, 179);
+            this.label2.Location = new System.Drawing.Point(61, 224);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 38);
+            this.label2.Size = new System.Drawing.Size(175, 48);
             this.label2.TabIndex = 5;
             this.label2.Text = "Небольшие";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // firstPierTotalServ
             // 
-            this.firstPierTotalServ.Location = new System.Drawing.Point(57, 146);
+            this.firstPierTotalServ.Location = new System.Drawing.Point(71, 182);
+            this.firstPierTotalServ.Margin = new System.Windows.Forms.Padding(4);
             this.firstPierTotalServ.Name = "firstPierTotalServ";
-            this.firstPierTotalServ.Size = new System.Drawing.Size(125, 27);
+            this.firstPierTotalServ.ReadOnly = true;
+            this.firstPierTotalServ.Size = new System.Drawing.Size(155, 31);
             this.firstPierTotalServ.TabIndex = 4;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(49, 126);
+            this.label1.Location = new System.Drawing.Point(61, 158);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 38);
+            this.label1.Size = new System.Drawing.Size(175, 48);
             this.label1.TabIndex = 3;
             this.label1.Text = "Всего обслужено";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // firstPierServiceNow
             // 
-            this.firstPierServiceNow.Location = new System.Drawing.Point(18, 96);
+            this.firstPierServiceNow.Location = new System.Drawing.Point(22, 120);
+            this.firstPierServiceNow.Margin = new System.Windows.Forms.Padding(4);
             this.firstPierServiceNow.Name = "firstPierServiceNow";
-            this.firstPierServiceNow.Size = new System.Drawing.Size(209, 27);
+            this.firstPierServiceNow.ReadOnly = true;
+            this.firstPierServiceNow.Size = new System.Drawing.Size(260, 31);
             this.firstPierServiceNow.TabIndex = 2;
             this.firstPierServiceNow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // serviceNowLabel
             // 
-            this.serviceNowLabel.Location = new System.Drawing.Point(49, 50);
+            this.serviceNowLabel.Location = new System.Drawing.Point(61, 62);
+            this.serviceNowLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.serviceNowLabel.Name = "serviceNowLabel";
-            this.serviceNowLabel.Size = new System.Drawing.Size(133, 43);
+            this.serviceNowLabel.Size = new System.Drawing.Size(166, 54);
             this.serviceNowLabel.TabIndex = 1;
             this.serviceNowLabel.Text = "Сейчас\r\nобслуживается";
             this.serviceNowLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1142,59 +1210,96 @@ namespace RiverPortApp.View
             // firstPierLabel
             // 
             this.firstPierLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstPierLabel.Location = new System.Drawing.Point(18, 10);
+            this.firstPierLabel.Location = new System.Drawing.Point(22, 12);
+            this.firstPierLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.firstPierLabel.Name = "firstPierLabel";
-            this.firstPierLabel.Size = new System.Drawing.Size(209, 25);
+            this.firstPierLabel.Size = new System.Drawing.Size(261, 31);
             this.firstPierLabel.TabIndex = 0;
             this.firstPierLabel.Text = "1 причал";
             this.firstPierLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Controls.Add(this.largeShipMiddleTime);
+            this.tabPage2.Controls.Add(this.medShipMiddleTime);
+            this.tabPage2.Controls.Add(this.smallShipMiddleTime);
+            this.tabPage2.Controls.Add(this.label34);
+            this.tabPage2.Controls.Add(this.label24);
+            this.tabPage2.Controls.Add(this.label23);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(1038, 569);
+            this.tabPage2.Size = new System.Drawing.Size(1300, 714);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Статистика";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
+            // largeShipMiddleTime
             // 
-            this.tabPage5.Controls.Add(this.label33);
-            this.tabPage5.Controls.Add(this.testLabel);
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1038, 569);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Test";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.largeShipMiddleTime.AutoSize = true;
+            this.largeShipMiddleTime.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.largeShipMiddleTime.Location = new System.Drawing.Point(824, 268);
+            this.largeShipMiddleTime.Name = "largeShipMiddleTime";
+            this.largeShipMiddleTime.Size = new System.Drawing.Size(0, 45);
+            this.largeShipMiddleTime.TabIndex = 5;
             // 
-            // label33
+            // medShipMiddleTime
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(43, 28);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(58, 20);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "label33";
+            this.medShipMiddleTime.AutoSize = true;
+            this.medShipMiddleTime.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.medShipMiddleTime.Location = new System.Drawing.Point(814, 175);
+            this.medShipMiddleTime.Name = "medShipMiddleTime";
+            this.medShipMiddleTime.Size = new System.Drawing.Size(0, 45);
+            this.medShipMiddleTime.TabIndex = 4;
             // 
-            // testLabel
+            // smallShipMiddleTime
             // 
-            this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(101, 68);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(0, 20);
-            this.testLabel.TabIndex = 0;
+            this.smallShipMiddleTime.AutoSize = true;
+            this.smallShipMiddleTime.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.smallShipMiddleTime.Location = new System.Drawing.Point(872, 84);
+            this.smallShipMiddleTime.Name = "smallShipMiddleTime";
+            this.smallShipMiddleTime.Size = new System.Drawing.Size(0, 45);
+            this.smallShipMiddleTime.TabIndex = 3;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label34.Location = new System.Drawing.Point(22, 268);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(796, 45);
+            this.label34.TabIndex = 2;
+            this.label34.Text = "Среднее время пребывания в порту больших судов:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label24.Location = new System.Drawing.Point(22, 175);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(786, 45);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Среднее время пребывания в порту средних судов:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label23.Location = new System.Drawing.Point(22, 84);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(831, 45);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Среднее время пребывания в порту небольших судов:";
             // 
             // dayLabel
             // 
             this.dayLabel.AutoSize = true;
             this.dayLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dayLabel.Location = new System.Drawing.Point(1076, 200);
+            this.dayLabel.Location = new System.Drawing.Point(1345, 250);
+            this.dayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dayLabel.Name = "dayLabel";
-            this.dayLabel.Size = new System.Drawing.Size(34, 28);
+            this.dayLabel.Size = new System.Drawing.Size(40, 32);
             this.dayLabel.TabIndex = 7;
             this.dayLabel.Text = "00";
             // 
@@ -1206,9 +1311,10 @@ namespace RiverPortApp.View
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(1117, 46);
+            this.label25.Location = new System.Drawing.Point(1396, 58);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(64, 25);
+            this.label25.Size = new System.Drawing.Size(77, 30);
             this.label25.TabIndex = 8;
             this.label25.Text = "Время";
             // 
@@ -1216,9 +1322,10 @@ namespace RiverPortApp.View
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(1105, 200);
+            this.label26.Location = new System.Drawing.Point(1381, 250);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(16, 28);
+            this.label26.Size = new System.Drawing.Size(19, 32);
             this.label26.TabIndex = 9;
             this.label26.Text = ":";
             // 
@@ -1226,9 +1333,10 @@ namespace RiverPortApp.View
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label27.Location = new System.Drawing.Point(1156, 200);
+            this.label27.Location = new System.Drawing.Point(1445, 250);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(16, 28);
+            this.label27.Size = new System.Drawing.Size(19, 32);
             this.label27.TabIndex = 10;
             this.label27.Text = ":";
             // 
@@ -1236,9 +1344,10 @@ namespace RiverPortApp.View
             // 
             this.minLabel.AutoSize = true;
             this.minLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.minLabel.Location = new System.Drawing.Point(1178, 200);
+            this.minLabel.Location = new System.Drawing.Point(1472, 250);
+            this.minLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minLabel.Name = "minLabel";
-            this.minLabel.Size = new System.Drawing.Size(34, 28);
+            this.minLabel.Size = new System.Drawing.Size(40, 32);
             this.minLabel.TabIndex = 11;
             this.minLabel.Text = "00";
             // 
@@ -1246,27 +1355,30 @@ namespace RiverPortApp.View
             // 
             this.hourLabel.AutoSize = true;
             this.hourLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.hourLabel.Location = new System.Drawing.Point(1127, 200);
+            this.hourLabel.Location = new System.Drawing.Point(1409, 250);
+            this.hourLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hourLabel.Name = "hourLabel";
-            this.hourLabel.Size = new System.Drawing.Size(34, 28);
+            this.hourLabel.Size = new System.Drawing.Size(40, 32);
             this.hourLabel.TabIndex = 12;
             this.hourLabel.Text = "00";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(1076, 180);
+            this.label28.Location = new System.Drawing.Point(1345, 225);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(37, 20);
+            this.label28.Size = new System.Drawing.Size(44, 25);
             this.label28.TabIndex = 13;
             this.label28.Text = "Дни";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(1117, 180);
+            this.label29.Location = new System.Drawing.Point(1396, 225);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(45, 20);
+            this.label29.Size = new System.Drawing.Size(54, 25);
             this.label29.TabIndex = 14;
             this.label29.Text = "Часы";
             this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1274,18 +1386,20 @@ namespace RiverPortApp.View
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(1168, 180);
+            this.label30.Location = new System.Drawing.Point(1460, 225);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(64, 20);
+            this.label30.Size = new System.Drawing.Size(77, 25);
             this.label30.TabIndex = 15;
             this.label30.Text = "Минуты";
             // 
             // buttonX10
             // 
             this.buttonX10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX10.Location = new System.Drawing.Point(1105, 375);
+            this.buttonX10.Location = new System.Drawing.Point(1381, 469);
+            this.buttonX10.Margin = new System.Windows.Forms.Padding(4);
             this.buttonX10.Name = "buttonX10";
-            this.buttonX10.Size = new System.Drawing.Size(89, 38);
+            this.buttonX10.Size = new System.Drawing.Size(111, 48);
             this.buttonX10.TabIndex = 16;
             this.buttonX10.Text = "x10";
             this.buttonX10.UseVisualStyleBackColor = true;
@@ -1294,9 +1408,10 @@ namespace RiverPortApp.View
             // buttonX5
             // 
             this.buttonX5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX5.Location = new System.Drawing.Point(1105, 331);
+            this.buttonX5.Location = new System.Drawing.Point(1381, 414);
+            this.buttonX5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(89, 38);
+            this.buttonX5.Size = new System.Drawing.Size(111, 48);
             this.buttonX5.TabIndex = 17;
             this.buttonX5.Text = "x5";
             this.buttonX5.UseVisualStyleBackColor = true;
@@ -1305,9 +1420,10 @@ namespace RiverPortApp.View
             // buttonX2
             // 
             this.buttonX2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX2.Location = new System.Drawing.Point(1105, 287);
+            this.buttonX2.Location = new System.Drawing.Point(1381, 359);
+            this.buttonX2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(89, 38);
+            this.buttonX2.Size = new System.Drawing.Size(111, 48);
             this.buttonX2.TabIndex = 18;
             this.buttonX2.Text = "x2";
             this.buttonX2.UseVisualStyleBackColor = true;
@@ -1316,9 +1432,10 @@ namespace RiverPortApp.View
             // buttonX1
             // 
             this.buttonX1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonX1.Location = new System.Drawing.Point(1105, 243);
+            this.buttonX1.Location = new System.Drawing.Point(1381, 304);
+            this.buttonX1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(89, 38);
+            this.buttonX1.Size = new System.Drawing.Size(111, 48);
             this.buttonX1.TabIndex = 19;
             this.buttonX1.Text = "x1";
             this.buttonX1.UseVisualStyleBackColor = true;
@@ -1328,9 +1445,10 @@ namespace RiverPortApp.View
             // 
             this.timerButton.Enabled = false;
             this.timerButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.timerButton.Location = new System.Drawing.Point(1105, 441);
+            this.timerButton.Location = new System.Drawing.Point(1381, 551);
+            this.timerButton.Margin = new System.Windows.Forms.Padding(4);
             this.timerButton.Name = "timerButton";
-            this.timerButton.Size = new System.Drawing.Size(89, 38);
+            this.timerButton.Size = new System.Drawing.Size(111, 48);
             this.timerButton.TabIndex = 20;
             this.timerButton.Text = "Stop";
             this.timerButton.UseVisualStyleBackColor = true;
@@ -1340,9 +1458,10 @@ namespace RiverPortApp.View
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label35.Location = new System.Drawing.Point(1076, 94);
+            this.label35.Location = new System.Drawing.Point(1345, 118);
+            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(155, 20);
+            this.label35.Size = new System.Drawing.Size(185, 25);
             this.label35.TabIndex = 22;
             this.label35.Text = "Всего часов прошло:";
             // 
@@ -1350,17 +1469,18 @@ namespace RiverPortApp.View
             // 
             this.allHours.AutoSize = true;
             this.allHours.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.allHours.Location = new System.Drawing.Point(1138, 136);
+            this.allHours.Location = new System.Drawing.Point(1422, 170);
+            this.allHours.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.allHours.Name = "allHours";
-            this.allHours.Size = new System.Drawing.Size(23, 28);
+            this.allHours.Size = new System.Drawing.Size(27, 32);
             this.allHours.TabIndex = 23;
             this.allHours.Text = "0";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 602);
+            this.ClientSize = new System.Drawing.Size(1564, 752);
             this.Controls.Add(this.allHours);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.timerButton);
@@ -1397,7 +1517,6 @@ namespace RiverPortApp.View
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.roadsteadData)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1406,8 +1525,8 @@ namespace RiverPortApp.View
             this.panel1.PerformLayout();
             this.firstPier.ResumeLayout(false);
             this.firstPier.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1416,11 +1535,9 @@ namespace RiverPortApp.View
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel firstPier;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox fourthPierLargeServ;
         private System.Windows.Forms.Label label17;
@@ -1468,8 +1585,6 @@ namespace RiverPortApp.View
         private System.Windows.Forms.TextBox firstPierServiceNow;
         private System.Windows.Forms.Label serviceNowLabel;
         private System.Windows.Forms.Label firstPierLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label dayLabel;
@@ -1506,36 +1621,40 @@ namespace RiverPortApp.View
         private System.Windows.Forms.Button buttonX5;
         private System.Windows.Forms.Button buttonX2;
         private System.Windows.Forms.Button buttonX1;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.DataGridView roadsteadData;
         private System.Windows.Forms.Button timerButton;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.DataGridView storageSmallShips;
         private System.Windows.Forms.Label vfdfvd;
         private System.Windows.Forms.DataGridView storageBigShips;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.DataGridView storageMedShips;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ships_time;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn size;
         private System.Windows.Forms.DataGridViewTextBoxColumn service_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label allHours;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ships_time;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label largeShipMiddleTime;
+        private System.Windows.Forms.Label medShipMiddleTime;
+        private System.Windows.Forms.Label smallShipMiddleTime;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
     }
 }
 

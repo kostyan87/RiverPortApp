@@ -48,6 +48,7 @@ namespace RiverPortApp.Presenter
             {
                 Vessel vessel = facade.getShipOutOfStorage();
                 facade.getProcessingComponents().getPort().getRoadstead().pushVessel(vessel);
+                vessel.setTimeArrivalRoadstead(facade.getTimeManager().getGeneralHour());
                 view.addVesselToRoadstead(vessel);
                 view.removeVesselFromStorage(vessel);
                 facade.getProcessingComponents().getVesselStorage().deleteVesselById(vessel.getId());
@@ -89,8 +90,22 @@ namespace RiverPortApp.Presenter
                         piers[i].increaseNumberOfSmallShipsServ(piers[i].getCurrentServiceShip().getSize());
                         piers[i].increaseNumberOfMedShipsServ(piers[i].getCurrentServiceShip().getSize());
                         piers[i].increaseNumberOfLargeShipsServ(piers[i].getCurrentServiceShip().getSize());
+                        view.changePierData(facade.getProcessingComponents().getPort(), i);
+                        facade.getProcessingComponents().getVesselStorage().decreaseVesselCount();
                     }
                 }
+            }
+        }
+
+        public void checkStopTime(int smallShipsCount, int medShipsCount, int largeShipsCount)
+        {
+            if (facade.getProcessingComponents().getVesselStorage().getVesselCount() == 0)
+            {
+                view.stopTime();
+                facade.calculateAverageTime(smallShipsCount, medShipsCount, largeShipsCount);
+                view.showMiddleAverage(facade.getSmallVesselMiddleTime(),
+                                       facade.getMedVesselMiddleTime(),
+                                       facade.getLargeVesselMiddleTime());
             }
         }
     }
